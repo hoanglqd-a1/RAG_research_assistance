@@ -33,11 +33,9 @@ flowchart TD
     O --> A
 ```
 
-The implementation uses native OpenAI function calling through the Responses
-API. The provider-specific conversion is isolated in `app/llm/openai_client.py`;
-the loop itself remains ordinary Python. See the
-[official OpenAI function-calling guide](https://developers.openai.com/api/docs/guides/function-calling)
-for the underlying API pattern.
+The implementation uses local Ollama chat/tool calling. The provider-specific
+conversion is isolated in `app/llm/ollama_client.py`; the loop itself remains
+ordinary Python.
 
 <!-- ## Repository architecture
 
@@ -123,7 +121,7 @@ when the process restarts.
 Tool failures and unknown tools become structured observations for the LLM, so it
 can correct arguments or answer differently. Logs include steps, selected tools,
 arguments, durations, success/failure, and final LLM/tool counts. They never log
-the API key or private model reasoning.
+secrets or private model reasoning.
 
 Structured result sources are collected from actual tool outputs rather than being
 trusted from generated text. The model is separately instructed to cite sources
@@ -141,11 +139,18 @@ pip install -r requirements.txt
 Copy-Item .env.example .env
 ```
 
+Make sure Ollama is running and the local model is available:
+
+```powershell
+ollama pull qwen3:14b-q4_K_M
+ollama serve
+```
+
 Configure `.env` without committing it:
 
 ```env
-LLM_API_KEY=your_openai_api_key
-LLM_MODEL=gpt-4.1-mini
+OLLAMA_HOST=http://localhost:11434
+LLM_MODEL=qwen3:14b-q4_K_M
 EMBEDDING_MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
 CHUNK_SIZE=500
 CHUNK_OVERLAP=75
@@ -173,6 +178,13 @@ python -m scripts.demo_agent sample.txt
 python -m scripts.demo_agent data\paper_a.pdf data\paper_b.pdf
 ```
 
+Ask one custom question after indexing local files:
+
+```powershell
+python -m scripts.ask_agent sample.txt "What is this document about?"
+python -m scripts.ask_agent data\paper_a.pdf data\paper_b.pdf "Compare the methods."
+```
+
 The script prints every selected tool and its validated arguments. Model tool
 selection is probabilistic, so the exact calls can vary; automated tests use a
 scripted fake LLM for deterministic loop verification. The embedding model is
@@ -191,7 +203,7 @@ python -m scripts.demo_retrieval sample.txt "What is this document about?" --top
 pytest -q
 ```
 
-Tests never call OpenAI. They use deterministic embeddings, a recording text
+Tests never call Ollama. They use deterministic embeddings, a recording text
 generator, and scripted agent responses. Coverage includes chunking, metadata,
 retrieval, safe arithmetic, invalid arguments, unknown tools, map-reduce
 summarization, source collection, the two-turn tool loop, and maximum steps.

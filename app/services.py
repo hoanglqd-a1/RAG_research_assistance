@@ -7,7 +7,7 @@ from app.agent.factory import build_tool_registry
 from app.agent.state import ConversationStore
 from app.agent.tools.summarize_document import DocumentSummarizer
 from app.core.config import Settings
-from app.llm.openai_client import OpenAIClient
+from app.llm.ollama_client import OllamaClient
 from app.rag.chunker import TextChunker
 from app.rag.document_loader import DocumentLoader
 from app.rag.embeddings import EmbeddingService
@@ -30,8 +30,6 @@ class ApplicationServices:
 def build_services(settings: Settings) -> ApplicationServices:
     """Create one shared in-memory index and all consumers of it."""
 
-    if not settings.llm_api_key:
-        raise ValueError("LLM_API_KEY is missing; add it to .env")
     embedding_service = EmbeddingService(settings.embedding_model_name)
     vector_store = FaissVectorStore()
     retriever = Retriever(embedding_service, vector_store)
@@ -41,7 +39,7 @@ def build_services(settings: Settings) -> ApplicationServices:
         embedding_service,
         vector_store,
     )
-    llm = OpenAIClient(settings.llm_api_key, settings.llm_model)
+    llm = OllamaClient(settings.llm_model, host=settings.ollama_host)
     summarizer = DocumentSummarizer(
         vector_store,
         llm,

@@ -1,5 +1,5 @@
 """LLM adapters used by RAG generation and the tool-using agent."""
 
-from app.llm.openai_client import OpenAIClient
+from app.llm.ollama_client import OllamaClient
 
-__all__ = ["OpenAIClient"]
+__all__ = ["OllamaClient"]
