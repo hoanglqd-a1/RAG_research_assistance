@@ -20,6 +20,8 @@ class VectorStore(Protocol):
         self, query_embedding: NDArray[np.float32], top_k: int
     ) -> list[SearchResult]: ...
 
+    def list_chunks(self, filename: str | None = None) -> list[TextChunk]: ...
+
 
 class FaissVectorStore:
     """In-memory cosine similarity index plus associated chunk data."""
@@ -72,6 +74,17 @@ class FaissVectorStore:
             for score, index in zip(scores[0], indices[0], strict=True)
             if index >= 0
         ]
+
+    def list_chunks(self, filename: str | None = None) -> list[TextChunk]:
+        """Return indexed chunks, optionally filtered by exact filename.
+
+        Document tools need coverage of the stored collection rather than a
+        similarity search. Returning a copy keeps the internal list private.
+        """
+
+        if filename is None:
+            return list(self._chunks)
+        return [chunk for chunk in self._chunks if chunk.filename == filename]
 
     @staticmethod
     def _as_matrix(values: NDArray[np.float32]) -> NDArray[np.float32]:

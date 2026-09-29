@@ -4,7 +4,7 @@ import logging
 from pathlib import Path
 import re
 
-import fitz
+import pymupdf
 
 from app.rag.models import Document
 
@@ -54,7 +54,7 @@ class DocumentLoader:
     def _load_pdf(path: Path) -> list[Document]:
         documents: list[Document] = []
         try:
-            with fitz.open(path) as pdf:
+            with pymupdf.open(path) as pdf:
                 for page_index, page in enumerate(pdf):
                     text = clean_text(page.get_text("text"))
                     if text:
@@ -65,7 +65,7 @@ class DocumentLoader:
                                 page=page_index + 1,
                             )
                         )
-        except fitz.FileDataError as exc:
+        except pymupdf.FileDataError as exc:
             raise ValueError(f"Could not read PDF '{path.name}': {exc}") from exc
 
         logger.info("Loaded %d non-empty pages from %s", len(documents), path.name)
