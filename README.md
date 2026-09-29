@@ -39,7 +39,7 @@ the loop itself remains ordinary Python. See the
 [official OpenAI function-calling guide](https://developers.openai.com/api/docs/guides/function-calling)
 for the underlying API pattern.
 
-## Repository architecture
+<!-- ## Repository architecture
 
 ```text
 app/
@@ -68,7 +68,7 @@ scripts/
   demo_retrieval.py
   demo_agent.py
 tests/
-```
+``` -->
 
 ## Retrieval pipeline
 
@@ -215,7 +215,7 @@ summarization, source collection, the two-turn tool loop, and maximum steps.
 This is what makes the system agentic: the application supplies capabilities and
 safety boundaries, while the model selects the sequence dynamically.
 
-## Current limitations
+<!-- ## Current limitations
 
 - FAISS data and conversations are process-local and not persisted.
 - Scanned PDFs, complex tables, and layout reconstruction require OCR/parsing work.
@@ -223,4 +223,4 @@ safety boundaries, while the model selects the sequence dynamically.
 - Summary input is capped by `MAX_SUMMARY_BATCHES`; the result reports truncation.
 - There is no authentication, web search, reranking, hybrid search, long-term
   memory, background autonomy, or multi-agent orchestration.
-- Tool traces show observable actions, not private chain-of-thought.
+- Tool traces show observable actions, not private chain-of-thought. -->
