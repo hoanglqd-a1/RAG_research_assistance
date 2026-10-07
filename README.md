@@ -205,6 +205,14 @@ python -m scripts.evaluate_retrieval
 
 The evaluator indexes only the three PDFs listed in `benchmarks/rag_agent_benchmark.json`, checks their SHA-256 hashes, runs the eligible retrieval questions at K=1,3,5, and writes aggregate scores plus retrieved chunks under `benchmark_results/`.
 
+Run the generation-backed agent-loop evaluation with Ollama available:
+
+```powershell
+python -m scripts.evaluate_agent
+```
+
+The agent evaluator indexes the same three PDFs, runs the summary, retrieval, table, abstention, and behavior cases, and writes `aggregate_scores.json`, `per_case_results.json`, `tool_traces.jsonl`, `answers.jsonl`, and `run_metadata.json` under `benchmark_results/agent_<timestamp>/`. It scores tool selection, source-page overlap, citation-page overlap, deterministic grounding/faithfulness proxies, behavior heuristics, latency, dependency versions, corpus hashes, and VRAM snapshots. Add `--judge-faithfulness` to use the configured local Ollama model for an extra faithfulness judgment over saved supporting chunks. Deferred web cases Q28-Q30 are skipped by default because there is no web-search tool; use `--include-deferred-web` only to test whether the current agent acknowledges that limitation.
+
 ## Tests
 
 ```powershell

@@ -1,0 +1,2223 @@
+[
+  {
+    "id": "Q01",
+    "category": "summary",
+    "reporting_group": "summary",
+    "case_source": "questions",
+    "question": "Summarize the main problem, core idea, and key contributions of Shape of Motion.",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion addresses monocular 4D reconstruction of dynamic scenes. It represents the scene with persistent 3D Gaussians and models their motion using a compact set of shared SE(3) motion bases, so each Gaussian follows a long-range 3D trajectory in world coordinates. It consolidates noisy monocular depth and long-range 2D tracking priors into a globally consistent 4D representation, enabling long-range 2D/3D tracking and novel-view synthesis.",
+    "latency_seconds": 0.003141579916700721,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "summarize_document"
+        ],
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "search_documents",
+        "summarize_document"
+      ],
+      "requires_no_tools": false,
+      "reason": "summary",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q02",
+    "category": "summary",
+    "reporting_group": "summary",
+    "case_source": "questions",
+    "question": "Summarize the main problem, core representation, and reconstruction pipeline of MoSca.",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "MoSca targets fully automatic 4D reconstruction and novel-view synthesis from casual monocular videos, including pose-free inputs. It represents deformation with a sparse 4D Motion Scaffold whose graph nodes are 6-DoF trajectories and whose motions are smoothly interpolated to dense scene points. The system obtains depth, long-term tracks, and motion cues from foundation models, estimates camera parameters, optimizes the scaffold with physical regularization, and globally fuses dynamic 3D Gaussians across time for rendering.",
+    "latency_seconds": 0.0011129011400043964,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "summarize_document"
+        ],
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "search_documents",
+        "summarize_document"
+      ],
+      "requires_no_tools": false,
+      "reason": "summary",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q03",
+    "category": "summary",
+    "reporting_group": "summary",
+    "case_source": "questions",
+    "question": "Summarize the main idea of SplineGS and explain the roles of MAS and MACP.",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "SplineGS is a COLMAP-free dynamic 3D Gaussian Splatting framework for monocular videos. Motion-Adaptive Spline (MAS) represents each dynamic Gaussian trajectory with piecewise cubic Hermite splines. Motion-Adaptive Control Points Pruning (MACP) adapts trajectory complexity by pruning unnecessary control points while preserving more control points for complex motion. SplineGS also jointly optimizes camera parameters and Gaussian attributes.",
+    "latency_seconds": 0.0008869350422173738,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "summarize_document"
+        ],
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "search_documents",
+        "summarize_document"
+      ],
+      "requires_no_tools": false,
+      "reason": "summary",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q04",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "What off-the-shelf priors does Shape of Motion use, and why are they useful?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion uses monocular depth estimates and long-range 2D point tracks. Depth provides per-frame geometric cues, while long-range tracks provide correspondence and motion cues. The method consolidates these noisy complementary priors into a globally coherent representation of scene geometry and motion.",
+    "latency_seconds": 0.001605119090527296,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q05",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "How is a MoSca graph node defined, and how is a dense SE(3) deformation obtained from the sparse graph?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Each MoSca node stores a 6-DoF trajectory represented by per-timestep SE(3) rigid transformations plus a control radius. Nodes are connected with a KNN topology using a curve-distance metric. For a query point, nearby node motions are weighted by radial-basis-function skinning weights and blended with Dual Quaternion Blending, which produces an interpolated SE(3) transform.",
+    "latency_seconds": 0.000908037880435586,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q06",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "Why does SplineGS use cubic Hermite splines instead of a fixed-degree polynomial trajectory model?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "SplineGS argues that fixed-degree polynomial trajectories have limited flexibility when motion complexity varies. Piecewise cubic Hermite splines can adapt local trajectory shape through control points, while MACP adjusts how many control points are needed. In the ablation, both third- and tenth-degree polynomial variants have worse rendering quality than MAS, and the tenth-degree polynomial is described as numerically unstable.",
+    "latency_seconds": 0.0008970790077000856,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q07",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "Compare how Shape of Motion, MoSca, and SplineGS handle camera parameters.",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion takes camera intrinsics and world-to-camera extrinsics as inputs. For in-the-wild videos, it initializes camera poses using MegaSaM and refines them during optimization; for public benchmarks, it uses dataset-provided camera annotations. MoSca is designed for pose-free monocular videos and estimates focal length and camera poses using bundle adjustment followed by photometric refinement. SplineGS is also COLMAP-free: it first performs a warm-up camera-parameter optimization with photometric and geometric consistency, then jointly optimizes camera parameters and 3D Gaussians during main training.",
+    "latency_seconds": 0.0008718909230083227,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q08",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "Compare the motion representations used by Shape of Motion, MoSca, and SplineGS.",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion uses a compact global set of shared SE(3) motion bases, with each Gaussian assigned coefficients over those bases. MoSca uses a sparse structured graph of 6-DoF trajectory nodes and interpolates nearby node transforms to obtain dense deformation. SplineGS models each dynamic Gaussian trajectory directly with a cubic Hermite spline whose number of control points is adapted by MACP.",
+    "latency_seconds": 0.0009150910191237926,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q09",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "How do Shape of Motion and MoSca differ in the way they impose low-dimensional structure on scene motion?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion uses a compact shared set of SE(3) motion bases and expresses each point or Gaussian motion as a weighted combination of those bases. MoSca instead uses a sparse graph of explicit 6-DoF node trajectories and obtains dense deformation by spatially blending nearby node motions. Both reduce the motion solution space, but one is basis-combination based and the other is sparse trajectory-graph based.",
+    "latency_seconds": 0.0008180218283087015,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q10",
+    "category": "narrative_retrieval",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "Both MoSca and SplineGS are COLMAP-free. What is the main difference in how they obtain camera parameters?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "MoSca estimates focal length and camera poses using bundle adjustment followed by photometric refinement. SplineGS uses a warm-up stage that optimizes camera parameters with photometric and geometric consistency, then jointly optimizes the camera and Gaussian representation during main training.",
+    "latency_seconds": 0.0009142891503870487,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q27",
+    "category": "abstention_and_false_premise",
+    "reporting_group": "narrative_retrieval",
+    "case_source": "questions",
+    "question": "MoSca relies on COLMAP to estimate camera poses before reconstruction. Which part of COLMAP does it use?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "The premise is incorrect. MoSca is designed to avoid requiring an external pose estimator such as COLMAP. It estimates focal length and camera poses using its own tracklet-based bundle adjustment and photometric optimization.",
+    "latency_seconds": 0.0008409309666603804,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q11",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "On the iPhone dataset, how much lower is Shape of Motion's 3D tracking EPE than TAPIR + Depth Anything?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion has EPE 0.082, while TAPIR + Depth Anything has EPE 0.114. The absolute reduction is 0.032, which is about a 28.1% relative reduction compared with TAPIR + Depth Anything.",
+    "latency_seconds": 0.0008747929241508245,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q12",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "On the iPhone dataset, by how many percentage points does Shape of Motion improve 2D tracking AJ over SpatialTracker in world coordinates?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion reports AJ = 34.4, while SpatialTracker in world coordinates reports AJ = 24.9. The improvement is 9.5 percentage points.",
+    "latency_seconds": 0.0008530940394848585,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q13",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "On Kubric MOVi-F, how much does Shape of Motion improve delta_3D^0.10 accuracy over CoTracker + Depth Anything?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Shape of Motion reports delta_3D^0.10 = 62.2, compared with 56.5 for CoTracker + Depth Anything. The improvement is 5.7 percentage points.",
+    "latency_seconds": 0.0009224030654877424,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q14",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "According to the Shape of Motion ablation, what happens to 3D tracking when 2D track supervision is removed?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Removing 2D track supervision increases EPE from 0.082 to 0.141, an absolute degradation of 0.059. delta_3D^0.05 drops from 43.0 to 30.4, and delta_3D^0.10 drops from 73.3 to 57.8, decreases of 12.6 and 15.5 percentage points respectively.",
+    "latency_seconds": 0.0008278479799628258,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q15",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "Under the DyCheck w-pose setting reported by MoSca, how much does MoSca outperform Shape of Motion in mPSNR and mLPIPS?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "MoSca reports 19.32 mPSNR and 0.264 mLPIPS, while Shape of Motion reports 17.32 mPSNR and 0.296 mLPIPS. MoSca is higher by 2.00 dB in mPSNR and lower by 0.032 in mLPIPS.",
+    "latency_seconds": 0.0009013398084789515,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q16",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "Under MoSca's pose-free DyCheck setting, how much better is MoSca than Gaussian Marbles in mPSNR and mLPIPS?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "MoSca reports 18.84 mPSNR and 0.289 mLPIPS, while Gaussian Marbles reports 15.79 mPSNR and 0.430 mLPIPS. MoSca improves mPSNR by 3.05 dB and reduces mLPIPS by 0.141.",
+    "latency_seconds": 0.000865614041686058,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q17",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "How much does MoSca improve PCK-T over the raw BootsTAPIR tracker on DyCheck?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "MoSca reports PCK-T = 0.824, while BootsTAPIR reports 0.779. The absolute improvement is 0.045, or 4.5 percentage points.",
+    "latency_seconds": 0.0008997758850455284,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q18",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "What is the effect of removing the tracking loss L_track in MoSca?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "The paper reports that PCK-T decreases from 0.824 to 0.737 when L_track is removed. That is an absolute drop of 0.087, or 8.7 percentage points.",
+    "latency_seconds": 0.0008173021487891674,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q19",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "Which MoSca ablation causes the largest rendering-quality collapse in Table 5, and by how much does mPSNR change relative to the full model?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Removing the photometric optimization stage causes the largest collapse. mPSNR drops from 19.32 for the full model to 13.71, a decrease of 5.61 dB. mLPIPS also worsens from 0.264 to 0.763.",
+    "latency_seconds": 0.000926935113966465,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q20",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "In SplineGS Table 1 on the NVIDIA dataset, how much does SplineGS improve average PSNR and LPIPS over the pose-free MoSca result?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "SplineGS reports 27.21 PSNR and 0.053 LPIPS, while the pose-free MoSca row reports 26.61 PSNR and 0.069 LPIPS. SplineGS improves PSNR by 0.60 dB and reduces LPIPS by 0.016.",
+    "latency_seconds": 0.000813355902209878,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q21",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "Using the FPS values in SplineGS Table 1, approximately how many times faster is SplineGS than RoDynRF and DynNeRF?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "SplineGS runs at 400 FPS, RoDynRF at 0.45 FPS, and DynNeRF at 0.05 FPS. Therefore SplineGS is about 889x faster than RoDynRF and 8,000x faster than DynNeRF.",
+    "latency_seconds": 0.0008406741544604301,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q22",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "For novel view-and-time synthesis on NVIDIA, how much better is SplineGS than the best baseline in PSNR, LPIPS, and tOF?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "SplineGS reports 25.92 PSNR, 0.098 LPIPS, and 0.703 tOF. Among the listed baselines, DynNeRF is the strongest on all three metrics with 23.36 PSNR, 0.219 LPIPS, and 0.921 tOF. SplineGS improves PSNR by 2.56 dB, reduces LPIPS by 0.121, and reduces tOF by 0.218.",
+    "latency_seconds": 0.0008357199840247631,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q23",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "In the SplineGS trajectory-model ablation, how does MAS compare with the Bezier baseline in quality and deformation latency?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "MAS gives 27.21 PSNR, 0.053 LPIPS, and 5.63 ns deformation latency per Gaussian, while Bezier gives 27.19 PSNR, 0.060 LPIPS, and 8.78 ns. MAS is 0.02 dB higher in PSNR, 0.007 lower in LPIPS, and about 35.9% lower in deformation latency.",
+    "latency_seconds": 0.000906660920009017,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q24",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "What benefit does MACP provide over using a fixed four control points for every dynamic Gaussian?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "With MACP, SplineGS obtains 27.21 PSNR, 0.053 LPIPS, and 5.63 ns deformation latency, compared with 26.62 PSNR, 0.065 LPIPS, and 5.34 ns for fixed Nc = 4. MACP improves PSNR by 0.59 dB and LPIPS by 0.012 at a small latency increase of 0.29 ns per Gaussian.",
+    "latency_seconds": 0.0008102611172944307,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q25",
+    "category": "table_quantitative",
+    "reporting_group": "table_quantitative",
+    "case_source": "questions",
+    "question": "Which SplineGS loss ablation is most catastrophic, and what are the numerical changes relative to the full model?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "Removing photometric-consistency loss L_pc is the most catastrophic ablation. PSNR falls from 27.21 to 17.49, a decrease of 9.72 dB, while LPIPS increases from 0.053 to 0.853, a degradation of 0.800.",
+    "latency_seconds": 0.000858645886182785,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents",
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "retrieve_and_calculate",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "Q26",
+    "category": "abstention_and_false_premise",
+    "reporting_group": "abstention",
+    "case_source": "questions",
+    "question": "What inference speed does Shape of Motion report on a smartphone or other mobile device?",
+    "answerability": "not_reported",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "The paper does not report inference or rendering speed on a smartphone or mobile device. It reports GPU-side rendering/runtime information, but no mobile-device benchmark.",
+    "latency_seconds": 0.0007968228310346603,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "search_documents"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator",
+        "search_documents"
+      ],
+      "requires_no_tools": false,
+      "reason": "document_retrieval",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": true,
+        "page_hit": false,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "complete_evidence": false,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B01",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "Which documents are currently indexed?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": null,
+    "latency_seconds": 0.0008715861476957798,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "get_document_metadata"
+        ]
+      ],
+      "allowed_tools": [
+        "get_document_metadata"
+      ],
+      "requires_no_tools": false,
+      "reason": "metadata_lookup",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B02",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "Summarize paper_not_exists.pdf.",
+    "answerability": "invalid_document",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": null,
+    "latency_seconds": 0.000817958964034915,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "summarize_document"
+        ],
+        [
+          "get_document_metadata"
+        ]
+      ],
+      "allowed_tools": [
+        "get_document_metadata",
+        "summarize_document"
+      ],
+      "requires_no_tools": false,
+      "reason": "invalid_document",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B03",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "Hello, what can you help me with?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": null,
+    "latency_seconds": 0.0008680878672748804,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        []
+      ],
+      "allowed_tools": [],
+      "requires_no_tools": true,
+      "reason": "direct_answer",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B04",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "What is 17.32 + 2.00?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": false,
+    "error": "ConnectionError: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download",
+    "answer": "",
+    "reference_answer": "19.32",
+    "latency_seconds": 0.0007838329765945673,
+    "llm_calls": 0,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator"
+      ],
+      "requires_no_tools": false,
+      "reason": "explicit_tool_selection_scoring",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": null,
+      "no_unexpected_tools": null,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "Agent run failed before faithfulness could be scored."
+    },
+    "behavior_scoring": {
+      "checks": {},
+      "passed": null,
+      "failed_tool_call_count": 0
+    }
+  }
+]

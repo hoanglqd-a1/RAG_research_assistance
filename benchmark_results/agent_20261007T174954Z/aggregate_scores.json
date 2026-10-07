@@ -1,0 +1,654 @@
+{
+  "all_agent_cases": {
+    "case_count": 31,
+    "case_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q27",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q26",
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 31,
+      "avg_latency_seconds": 0.0009678899265465236,
+      "median_latency_seconds": 0.0008715861476957798,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 27,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 31
+      }
+    }
+  },
+  "main_non_web": {
+    "case_count": 31,
+    "case_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q27",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q26",
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 31,
+      "avg_latency_seconds": 0.0009678899265465236,
+      "median_latency_seconds": 0.0008715861476957798,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 27,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 31
+      }
+    }
+  },
+  "reporting_group:summary": {
+    "case_count": 3,
+    "case_ids": [
+      "Q01",
+      "Q02",
+      "Q03"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 3,
+      "avg_latency_seconds": 0.001713805366307497,
+      "median_latency_seconds": 0.0011129011400043964,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 3,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 3
+      }
+    }
+  },
+  "category:summary": {
+    "case_count": 3,
+    "case_ids": [
+      "Q01",
+      "Q02",
+      "Q03"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 3,
+      "avg_latency_seconds": 0.001713805366307497,
+      "median_latency_seconds": 0.0011129011400043964,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 3,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 3
+      }
+    }
+  },
+  "reporting_group:narrative_retrieval": {
+    "case_count": 8,
+    "case_ids": [
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q27"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 8,
+      "avg_latency_seconds": 0.0009713074832689017,
+      "median_latency_seconds": 0.0009025584440678358,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 8,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 8
+      }
+    }
+  },
+  "category:narrative_retrieval": {
+    "case_count": 7,
+    "case_ids": [
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 7,
+      "avg_latency_seconds": 0.000989932699927262,
+      "median_latency_seconds": 0.000908037880435586,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 7,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 7
+      }
+    }
+  },
+  "category:abstention_and_false_premise": {
+    "case_count": 2,
+    "case_ids": [
+      "Q27",
+      "Q26"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 2,
+      "avg_latency_seconds": 0.0008188768988475204,
+      "median_latency_seconds": 0.0008188768988475204,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 2,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 2
+      }
+    }
+  },
+  "reporting_group:table_quantitative": {
+    "case_count": 15,
+    "case_ids": [
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 15,
+      "avg_latency_seconds": 0.0008636281980822484,
+      "median_latency_seconds": 0.000858645886182785,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 15,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 15
+      }
+    }
+  },
+  "category:table_quantitative": {
+    "case_count": 15,
+    "case_ids": [
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 15,
+      "avg_latency_seconds": 0.0008636281980822484,
+      "median_latency_seconds": 0.000858645886182785,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 15,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 15
+      }
+    }
+  },
+  "reporting_group:abstention": {
+    "case_count": 1,
+    "case_ids": [
+      "Q26"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 1,
+      "avg_latency_seconds": 0.0007968228310346603,
+      "median_latency_seconds": 0.0007968228310346603,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 1,
+      "structured_source_page_hit_rate": 0.0,
+      "structured_source_page_recall": 0.0,
+      "structured_source_page_mrr": 0.0,
+      "structured_source_complete_evidence_rate": 0.0,
+      "citation_present_rate": 0.0,
+      "citation_page_hit_rate": 0.0,
+      "citation_page_recall": 0.0,
+      "citation_complete_evidence_rate": 0.0,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 1
+      }
+    }
+  },
+  "reporting_group:agent_behavior": {
+    "case_count": 4,
+    "case_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 4,
+      "avg_latency_seconds": 0.0008353664889000356,
+      "median_latency_seconds": 0.0008430234156548977,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 0,
+      "structured_source_page_hit_rate": null,
+      "structured_source_page_recall": null,
+      "structured_source_page_mrr": null,
+      "structured_source_complete_evidence_rate": null,
+      "citation_present_rate": null,
+      "citation_page_hit_rate": null,
+      "citation_page_recall": null,
+      "citation_complete_evidence_rate": null,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 4
+      }
+    }
+  },
+  "category:agent_behavior": {
+    "case_count": 4,
+    "case_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 0.0,
+      "error_count": 4,
+      "avg_latency_seconds": 0.0008353664889000356,
+      "median_latency_seconds": 0.0008430234156548977,
+      "avg_llm_calls": 0.0,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": null,
+      "no_unexpected_tools_rate": null,
+      "avg_tool_calls": 0.0
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 0,
+      "structured_source_page_hit_rate": null,
+      "structured_source_page_recall": null,
+      "structured_source_page_mrr": null,
+      "structured_source_complete_evidence_rate": null,
+      "citation_present_rate": null,
+      "citation_page_hit_rate": null,
+      "citation_page_recall": null,
+      "citation_complete_evidence_rate": null,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 0,
+      "behavior_expectation_pass_rate": null,
+      "failed_tool_call_count": 0,
+      "check_rates": {}
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 4
+      }
+    }
+  }
+}
