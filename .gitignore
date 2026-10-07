@@ -8,3 +8,4 @@ data/*
 !data/.gitkeep
 test_files/*
 benchmarks/*.pdf
+# benchmark_results/

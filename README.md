@@ -197,6 +197,14 @@ The retrieval-only demo remains available:
 python -m scripts.demo_retrieval sample.txt "What is this document about?" --top-k 3
 ```
 
+Run the benchmark retrieval evaluation without calling an LLM:
+
+```powershell
+python -m scripts.evaluate_retrieval
+```
+
+The evaluator indexes only the three PDFs listed in `benchmarks/rag_agent_benchmark.json`, checks their SHA-256 hashes, runs the eligible retrieval questions at K=1,3,5, and writes aggregate scores plus retrieved chunks under `benchmark_results/`.
+
 ## Tests
 
 ```powershell
