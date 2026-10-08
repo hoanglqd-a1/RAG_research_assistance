@@ -1,0 +1,3 @@
+{"case_id": "B01", "category": "agent_behavior", "reporting_group": "agent_behavior", "tool_call_index": 1, "step": 1, "tool": "get_document_metadata", "arguments": {}, "success": true, "duration_ms": 0.14163809828460217, "error": null}
+{"case_id": "B02", "category": "agent_behavior", "reporting_group": "agent_behavior", "tool_call_index": 1, "step": 1, "tool": "get_document_metadata", "arguments": {"filename": "paper_not_exists.pdf"}, "success": true, "duration_ms": 0.04397006705403328, "error": null}
+{"case_id": "B04", "category": "agent_behavior", "reporting_group": "agent_behavior", "tool_call_index": 1, "step": 1, "tool": "calculator", "arguments": {"expression": "17.32 + 2.00"}, "success": true, "duration_ms": 0.06462400779128075, "error": null}

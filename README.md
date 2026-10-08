@@ -107,7 +107,7 @@ when the process restarts.
 
 ### Available tools
 
-- `search_documents(query, top_k=5)` calls the existing `Retriever` and returns
+- `search_documents(query, top_k=5)` calls the configured retrieval backend and returns
   text, filename, page, chunk ID, metadata, and cosine score.
 - `get_document_metadata(filename=None)` lists indexed filenames, pages, chunk
   counts, and stored metadata.
@@ -252,3 +252,25 @@ safety boundaries, while the model selects the sequence dynamically.
 - There is no authentication, web search, reranking, hybrid search, long-term
   memory, background autonomy, or multi-agent orchestration.
 - Tool traces show observable actions, not private chain-of-thought. -->
+# BM25 retrieval
+
+Set `RETRIEVAL_MODE=bm25` to use lexical retrieval in document search, pipeline
+queries, and evaluations. The default remains `dense`. Install the updated
+`requirements.txt` in the project environment first.
+
+BM25 uses the same extracted chunks and source metadata as FAISS. Its tokenizer
+case-folds text and keeps Unicode word tokens, including technical acronyms and
+numbers. `BM25_K1=1.5` and `BM25_B=0.75` configure frequency saturation and length
+normalization. Its scores are relevance scores, not cosine similarities.
+
+Compare retrieval without running Ollama:
+
+```bash
+RETRIEVAL_MODE=dense python -m scripts.evaluate_retrieval --output-dir benchmark_results/dense_baseline
+RETRIEVAL_MODE=bm25 python -m scripts.evaluate_retrieval --output-dir benchmark_results/bm25_baseline
+```
+
+Use `.venv/bin/python` inside `RAGagent`. The pipeline still builds FAISS and
+embeddings alongside BM25 so existing document tools keep their shared corpus;
+BM25 query scoring itself uses only CPU and needs no generation model. Both
+evaluation runners record retrieval mode, BM25 parameters, and dependency versions.

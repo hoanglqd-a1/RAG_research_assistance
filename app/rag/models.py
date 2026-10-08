@@ -27,7 +27,7 @@ class TextChunk:
 
 @dataclass(frozen=True)
 class SearchResult:
-    """A retrieved chunk and its cosine-similarity score."""
+    """A retrieved chunk and its backend-specific relevance score."""
 
     chunk: TextChunk
     score: float

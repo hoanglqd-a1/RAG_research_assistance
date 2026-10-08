@@ -9,18 +9,19 @@ from app.agent.tools.summarize_document import DocumentSummarizer
 from app.core.config import Settings
 from app.llm.ollama_client import OllamaClient
 from app.rag.chunker import TextChunker
+from app.rag.bm25_store import BM25Store
 from app.rag.document_loader import DocumentLoader
 from app.rag.embeddings import EmbeddingService
 from app.rag.generator import RagGenerator
 from app.rag.pipeline import RetrievalPipeline
-from app.rag.retriever import Retriever
+from app.rag.retriever import BM25Retriever, RetrievalProvider, VectorRetriever
 from app.rag.vector_store import FaissVectorStore
 
 
 @dataclass
 class ApplicationServices:
     pipeline: RetrievalPipeline
-    retriever: Retriever
+    retriever: RetrievalProvider
     vector_store: FaissVectorStore
     rag_generator: RagGenerator
     agent: Agent
@@ -32,12 +33,19 @@ def build_services(settings: Settings) -> ApplicationServices:
 
     embedding_service = EmbeddingService(settings.embedding_model_name)
     vector_store = FaissVectorStore()
-    retriever = Retriever(embedding_service, vector_store)
+    bm25_store = BM25Store(settings.bm25_k1, settings.bm25_b)
+    retriever = (
+        BM25Retriever(bm25_store)
+        if settings.retrieval_mode == "bm25"
+        else VectorRetriever(embedding_service, vector_store)
+    )
     pipeline = RetrievalPipeline(
         DocumentLoader(),
         TextChunker(settings.chunk_size, settings.chunk_overlap),
         embedding_service,
         vector_store,
+        retriever=retriever,
+        bm25_store=bm25_store,
     )
     llm = OllamaClient(settings.llm_model, host=settings.ollama_host)
     summarizer = DocumentSummarizer(

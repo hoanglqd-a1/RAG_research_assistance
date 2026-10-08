@@ -224,9 +224,17 @@ def build_pipeline(project_settings: Any) -> Any:
     from app.rag.embeddings import EmbeddingService
     from app.rag.pipeline import RetrievalPipeline
     from app.rag.vector_store import FaissVectorStore
+    from app.rag.bm25_store import BM25Store
+    from app.rag.retriever import BM25Retriever, VectorRetriever
 
     embedding_service = EmbeddingService(project_settings.embedding_model_name)
     vector_store = FaissVectorStore()
+    bm25_store = BM25Store(project_settings.bm25_k1, project_settings.bm25_b)
+    retriever = (
+        BM25Retriever(bm25_store)
+        if project_settings.retrieval_mode == "bm25"
+        else VectorRetriever(embedding_service, vector_store)
+    )
     return RetrievalPipeline(
         loader=DocumentLoader(),
         chunker=TextChunker(
@@ -234,6 +242,8 @@ def build_pipeline(project_settings: Any) -> Any:
         ),
         embedding_service=embedding_service,
         vector_store=vector_store,
+        retriever=retriever,
+        bm25_store=bm25_store,
     )
 
 
@@ -485,12 +495,20 @@ def build_run_metadata(
         "chunk_overlap": project_settings.chunk_overlap,
         "k_values": list(k_values),
         "retrieval_configuration": {
+            "mode": project_settings.retrieval_mode,
+            "bm25_k1": project_settings.bm25_k1,
+            "bm25_b": project_settings.bm25_b,
+            "bm25_tokenizer": "casefold + Unicode word tokens; no stemming",
             "pipeline": "RetrievalPipeline",
             "loader": "DocumentLoader",
             "chunker": "TextChunker",
             "embedding_service": "EmbeddingService",
             "vector_store": "FaissVectorStore",
-            "similarity": "cosine via normalized inner product",
+            "similarity": (
+                "BM25Okapi relevance"
+                if project_settings.retrieval_mode == "bm25"
+                else "cosine via normalized inner product"
+            ),
             "query_strategy": "run max K once per question and score prefixes",
             "score_unit": "filename_and_one_based_pdf_page",
             "page_ndcg_definition": (
@@ -573,6 +591,7 @@ def dependency_versions() -> dict[str, str]:
         "PyMuPDF",
         "sentence-transformers",
         "faiss-cpu",
+        "rank-bm25",
         "numpy",
         "ollama",
         "torch",

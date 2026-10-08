@@ -1,0 +1,327 @@
+[
+  {
+    "id": "B01",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "Which documents are currently indexed?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": true,
+    "error": null,
+    "answer": "There are currently 3 indexed documents:\n\n1. **q001.pdf**  \n   - 191 chunks across 17 pages\n\n2. **q002.pdf**  \n   - 150 chunks across 13 pages\n\n3. **q003.pdf**  \n   - 145 chunks across 16 pages\n\nWould you like details about any specific document?",
+    "reference_answer": null,
+    "latency_seconds": 12.21857238584198,
+    "llm_calls": 2,
+    "stopped_due_to_limit": false,
+    "tool_calls": [
+      {
+        "step": 1,
+        "tool": "get_document_metadata",
+        "arguments": {},
+        "success": true,
+        "duration_ms": 0.14163809828460217,
+        "error": null
+      }
+    ],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "get_document_metadata"
+        ]
+      ],
+      "allowed_tools": [
+        "get_document_metadata"
+      ],
+      "requires_no_tools": false,
+      "reason": "metadata_lookup",
+      "selected_tools": [
+        "get_document_metadata"
+      ],
+      "tool_call_count": 1,
+      "expected_tools_satisfied": true,
+      "no_unexpected_tools": true,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "No in-corpus evidence labels are available for faithfulness scoring."
+    },
+    "behavior_scoring": {
+      "checks": {
+        "lists_expected_documents": true
+      },
+      "passed": true,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B02",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "Summarize paper_not_exists.pdf.",
+    "answerability": "invalid_document",
+    "requires_web_search": false,
+    "ok": true,
+    "error": null,
+    "answer": "The document \"paper_not_exists.pdf\" is not present in the indexed collection. No metadata or content is available for this filename. Would you like assistance with another document or task?",
+    "reference_answer": null,
+    "latency_seconds": 10.816694319946691,
+    "llm_calls": 2,
+    "stopped_due_to_limit": false,
+    "tool_calls": [
+      {
+        "step": 1,
+        "tool": "get_document_metadata",
+        "arguments": {
+          "filename": "paper_not_exists.pdf"
+        },
+        "success": true,
+        "duration_ms": 0.04397006705403328,
+        "error": null
+      }
+    ],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "summarize_document"
+        ],
+        [
+          "get_document_metadata"
+        ]
+      ],
+      "allowed_tools": [
+        "get_document_metadata",
+        "summarize_document"
+      ],
+      "requires_no_tools": false,
+      "reason": "invalid_document",
+      "selected_tools": [
+        "get_document_metadata"
+      ],
+      "tool_call_count": 1,
+      "expected_tools_satisfied": true,
+      "no_unexpected_tools": true,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "No in-corpus evidence labels are available for faithfulness scoring."
+    },
+    "behavior_scoring": {
+      "checks": {
+        "reports_document_not_found": true
+      },
+      "passed": true,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B03",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "Hello, what can you help me with?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": true,
+    "error": null,
+    "answer": "I can help you with various tasks such as answering questions, performing calculations, retrieving document information, and summarizing documents. Let me know how I can assist you!",
+    "reference_answer": null,
+    "latency_seconds": 6.632729310076684,
+    "llm_calls": 1,
+    "stopped_due_to_limit": false,
+    "tool_calls": [],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        []
+      ],
+      "allowed_tools": [],
+      "requires_no_tools": true,
+      "reason": "direct_answer",
+      "selected_tools": [],
+      "tool_call_count": 0,
+      "expected_tools_satisfied": true,
+      "no_unexpected_tools": true,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "No in-corpus evidence labels are available for faithfulness scoring."
+    },
+    "behavior_scoring": {
+      "checks": {
+        "answers_without_tools": true
+      },
+      "passed": true,
+      "failed_tool_call_count": 0
+    }
+  },
+  {
+    "id": "B04",
+    "category": "agent_behavior",
+    "reporting_group": "agent_behavior",
+    "case_source": "behavior_tests",
+    "question": "What is 17.32 + 2.00?",
+    "answerability": "answerable",
+    "requires_web_search": false,
+    "ok": true,
+    "error": null,
+    "answer": "The sum of 17.32 and 2.00 is 19.32.",
+    "reference_answer": "19.32",
+    "latency_seconds": 12.421224762918428,
+    "llm_calls": 2,
+    "stopped_due_to_limit": false,
+    "tool_calls": [
+      {
+        "step": 1,
+        "tool": "calculator",
+        "arguments": {
+          "expression": "17.32 + 2.00"
+        },
+        "success": true,
+        "duration_ms": 0.06462400779128075,
+        "error": null
+      }
+    ],
+    "tool_selection": {
+      "accepted_tool_plans": [
+        [
+          "calculator"
+        ]
+      ],
+      "allowed_tools": [
+        "calculator"
+      ],
+      "requires_no_tools": false,
+      "reason": "explicit_tool_selection_scoring",
+      "selected_tools": [
+        "calculator"
+      ],
+      "tool_call_count": 1,
+      "expected_tools_satisfied": true,
+      "no_unexpected_tools": true,
+      "unexpected_tools": []
+    },
+    "sources": [],
+    "citations": [],
+    "supporting_chunks": [],
+    "evidence_scoring": {
+      "source_pages": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "answer_citations": {
+        "scored": false,
+        "page_hit": null,
+        "page_recall": null,
+        "page_mrr": null,
+        "complete_evidence": null,
+        "covered_group_ids": [],
+        "first_match_position": null
+      },
+      "citation_present": false,
+      "citation_pages_supported_by_structured_sources": null
+    },
+    "faithfulness_scoring": {
+      "mode": "not_scored",
+      "faithful": null,
+      "score": null,
+      "note": "No in-corpus evidence labels are available for faithfulness scoring."
+    },
+    "behavior_scoring": {
+      "checks": {
+        "numeric_answer_correct": true
+      },
+      "passed": true,
+      "failed_tool_call_count": 0
+    }
+  }
+]

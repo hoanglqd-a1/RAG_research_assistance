@@ -4,7 +4,7 @@ from app.agent.registry import ToolRegistry
 from app.agent.tools.calculator import create_calculator_tool, evaluate_arithmetic
 from app.agent.tools.document_search import create_search_documents_tool
 from app.rag.models import TextChunk
-from app.rag.retriever import Retriever
+from app.rag.retriever import VectorRetriever
 from app.rag.vector_store import FaissVectorStore
 from tests.fakes import KeywordEmbeddingService
 
@@ -18,7 +18,7 @@ def _search_registry() -> ToolRegistry:
     store = FaissVectorStore()
     store.add_documents(chunks, embedder.embed_documents([c.text for c in chunks]))
     registry = ToolRegistry()
-    registry.register(create_search_documents_tool(Retriever(embedder, store)))
+    registry.register(create_search_documents_tool(VectorRetriever(embedder, store)))
     return registry
 
 

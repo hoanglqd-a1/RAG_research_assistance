@@ -8,12 +8,12 @@ from app.agent.tools.summarize_document import (
     DocumentSummarizer,
     create_summarize_document_tool,
 )
-from app.rag.retriever import Retriever
+from app.rag.retriever import RetrievalProvider
 from app.rag.vector_store import VectorStore
 
 
 def build_tool_registry(
-    retriever: Retriever,
+    retriever: RetrievalProvider,
     vector_store: VectorStore,
     summarizer: DocumentSummarizer,
 ) -> ToolRegistry:

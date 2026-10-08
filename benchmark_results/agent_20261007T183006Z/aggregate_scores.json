@@ -1,0 +1,262 @@
+{
+  "all_agent_cases": {
+    "case_count": 4,
+    "case_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 1.0,
+      "error_count": 0,
+      "avg_latency_seconds": 10.522305194695946,
+      "median_latency_seconds": 11.517633352894336,
+      "avg_llm_calls": 1.75,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": 1.0,
+      "no_unexpected_tools_rate": 1.0,
+      "avg_tool_calls": 0.75
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 0,
+      "structured_source_page_hit_rate": null,
+      "structured_source_page_recall": null,
+      "structured_source_page_mrr": null,
+      "structured_source_complete_evidence_rate": null,
+      "citation_present_rate": null,
+      "citation_page_hit_rate": null,
+      "citation_page_recall": null,
+      "citation_complete_evidence_rate": null,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 4,
+      "behavior_expectation_pass_rate": 1.0,
+      "failed_tool_call_count": 0,
+      "check_rates": {
+        "answers_without_tools": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "lists_expected_documents": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "numeric_answer_correct": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "reports_document_not_found": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 4
+      }
+    }
+  },
+  "main_non_web": {
+    "case_count": 4,
+    "case_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 1.0,
+      "error_count": 0,
+      "avg_latency_seconds": 10.522305194695946,
+      "median_latency_seconds": 11.517633352894336,
+      "avg_llm_calls": 1.75,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": 1.0,
+      "no_unexpected_tools_rate": 1.0,
+      "avg_tool_calls": 0.75
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 0,
+      "structured_source_page_hit_rate": null,
+      "structured_source_page_recall": null,
+      "structured_source_page_mrr": null,
+      "structured_source_complete_evidence_rate": null,
+      "citation_present_rate": null,
+      "citation_page_hit_rate": null,
+      "citation_page_recall": null,
+      "citation_complete_evidence_rate": null,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 4,
+      "behavior_expectation_pass_rate": 1.0,
+      "failed_tool_call_count": 0,
+      "check_rates": {
+        "answers_without_tools": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "lists_expected_documents": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "numeric_answer_correct": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "reports_document_not_found": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 4
+      }
+    }
+  },
+  "reporting_group:agent_behavior": {
+    "case_count": 4,
+    "case_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 1.0,
+      "error_count": 0,
+      "avg_latency_seconds": 10.522305194695946,
+      "median_latency_seconds": 11.517633352894336,
+      "avg_llm_calls": 1.75,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": 1.0,
+      "no_unexpected_tools_rate": 1.0,
+      "avg_tool_calls": 0.75
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 0,
+      "structured_source_page_hit_rate": null,
+      "structured_source_page_recall": null,
+      "structured_source_page_mrr": null,
+      "structured_source_complete_evidence_rate": null,
+      "citation_present_rate": null,
+      "citation_page_hit_rate": null,
+      "citation_page_recall": null,
+      "citation_complete_evidence_rate": null,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 4,
+      "behavior_expectation_pass_rate": 1.0,
+      "failed_tool_call_count": 0,
+      "check_rates": {
+        "answers_without_tools": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "lists_expected_documents": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "numeric_answer_correct": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "reports_document_not_found": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 4
+      }
+    }
+  },
+  "category:agent_behavior": {
+    "case_count": 4,
+    "case_ids": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "run": {
+      "ok_rate": 1.0,
+      "error_count": 0,
+      "avg_latency_seconds": 10.522305194695946,
+      "median_latency_seconds": 11.517633352894336,
+      "avg_llm_calls": 1.75,
+      "stopped_due_to_limit_rate": 0.0
+    },
+    "tool_selection": {
+      "expected_tools_satisfied_rate": 1.0,
+      "no_unexpected_tools_rate": 1.0,
+      "avg_tool_calls": 0.75
+    },
+    "evidence_and_citations": {
+      "scored_case_count": 0,
+      "structured_source_page_hit_rate": null,
+      "structured_source_page_recall": null,
+      "structured_source_page_mrr": null,
+      "structured_source_complete_evidence_rate": null,
+      "citation_present_rate": null,
+      "citation_page_hit_rate": null,
+      "citation_page_recall": null,
+      "citation_complete_evidence_rate": null,
+      "citation_pages_supported_rate": null
+    },
+    "behavior": {
+      "scored_case_count": 4,
+      "behavior_expectation_pass_rate": 1.0,
+      "failed_tool_call_count": 0,
+      "check_rates": {
+        "answers_without_tools": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "lists_expected_documents": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "numeric_answer_correct": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        },
+        "reports_document_not_found": {
+          "case_count": 1,
+          "pass_rate": 1.0
+        }
+      }
+    },
+    "faithfulness": {
+      "scored_case_count": 0,
+      "faithful_rate": null,
+      "faithfulness_score": null,
+      "mode_counts": {
+        "not_scored": 4
+      }
+    }
+  }
+}

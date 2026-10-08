@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from tqdm import tqdm
 
 from app.evaluation.retrieval_benchmark import (
     DEFAULT_BENCHMARK_PATH,
@@ -96,12 +97,17 @@ FALSE_PREMISE_TERMS = (
 NOT_FOUND_TERMS = (
     "not indexed",
     "no indexed document",
+    "not present",
+    "not in the indexed",
     "not found",
     "could not find",
     "can't find",
     "does not exist",
+    "may not exist",
     "is not available",
     "isn't indexed",
+    "no metadata",
+    "no data for this filename",
 )
 
 
@@ -213,7 +219,6 @@ def run_agent_benchmark(config: AgentBenchmarkConfig) -> dict[str, Any]:
         include_deferred_web=config.include_deferred_web,
         case_ids=config.case_ids,
     )
-
     project_settings = load_project_settings()
     reset_torch_peak_memory()
     resource_before_index = collect_resource_snapshot()
@@ -244,7 +249,7 @@ def run_agent_benchmark(config: AgentBenchmarkConfig) -> dict[str, Any]:
 
     per_case_results = []
     agent_started = time.perf_counter()
-    for case in cases:
+    for case in tqdm(cases, desc="Processing cases"):
         case_started = time.perf_counter()
         try:
             result = services.agent.run(case["question"])
@@ -1115,6 +1120,12 @@ def build_agent_run_metadata(
         },
         "embedding_model_name": project_settings.embedding_model_name,
         "embedding_model_revision": "unknown",
+        "retrieval_configuration": {
+            "mode": project_settings.retrieval_mode,
+            "bm25_k1": project_settings.bm25_k1,
+            "bm25_b": project_settings.bm25_b,
+            "bm25_tokenizer": "casefold + Unicode word tokens; no stemming",
+        },
         "chunk_size": project_settings.chunk_size,
         "chunk_overlap": project_settings.chunk_overlap,
         "agent_configuration": {

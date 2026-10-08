@@ -9,7 +9,7 @@ from app.agent.state import AgentState
 from app.agent.tools.calculator import create_calculator_tool
 from app.agent.tools.document_search import create_search_documents_tool
 from app.rag.models import TextChunk
-from app.rag.retriever import Retriever
+from app.rag.retriever import VectorRetriever
 from app.rag.vector_store import FaissVectorStore
 from tests.fakes import KeywordEmbeddingService
 
@@ -83,7 +83,7 @@ def test_agent_searches_documents_then_preserves_sources() -> None:
     chunk = TextChunk("The ocean contains salt water.", "sea.pdf", 4, "sea-4")
     store.add_documents([chunk], embedder.embed_documents([chunk.text]))
     registry = ToolRegistry()
-    registry.register(create_search_documents_tool(Retriever(embedder, store)))
+    registry.register(create_search_documents_tool(VectorRetriever(embedder, store)))
     llm = ScriptedAgentLLM(
         [
             AgentModelResponse(

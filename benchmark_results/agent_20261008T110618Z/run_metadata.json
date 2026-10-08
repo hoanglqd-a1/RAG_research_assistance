@@ -1,0 +1,259 @@
+{
+  "benchmark_name": "RAG Agent Benchmark",
+  "benchmark_version": "1.1",
+  "benchmark_sha256": "6cfa40896c1d39213a27861de28811d9df9b72092ce4d9767a9df7ecc0a7f317",
+  "evaluation_type": "agent_loop",
+  "run_started_at": "2026-10-08T11:06:18.188286+00:00",
+  "run_finished_at": "2026-10-08T11:25:25.872400+00:00",
+  "corpus_hash_algorithm": "sha256",
+  "corpus_sha256": "32a38dd2d10e3be5c24b3a319651611ce7b84526d56018793631f7dedf768c4c",
+  "corpus_files": [
+    {
+      "title": "Shape of Motion: 4D Reconstruction from a Single Video",
+      "short_name": "Shape of Motion",
+      "filename": "q001.pdf",
+      "expected_sha256": "5f0fb35636084d0020d57b50af58dd81b8fb62f19b4f99dd35a27a0f4c24c782",
+      "actual_sha256": "5f0fb35636084d0020d57b50af58dd81b8fb62f19b4f99dd35a27a0f4c24c782",
+      "hash_matches": true,
+      "path": "benchmarks/q001.pdf"
+    },
+    {
+      "title": "MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds",
+      "short_name": "MoSca",
+      "filename": "q002.pdf",
+      "expected_sha256": "f6c50c2213f8e70159ed9d43c30781d356d203db8009b7c5f5d278cf98a19ed9",
+      "actual_sha256": "f6c50c2213f8e70159ed9d43c30781d356d203db8009b7c5f5d278cf98a19ed9",
+      "hash_matches": true,
+      "path": "benchmarks/q002.pdf"
+    },
+    {
+      "title": "SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video",
+      "short_name": "SplineGS",
+      "filename": "q003.pdf",
+      "expected_sha256": "af4339e213c796227827b2b0dce398ad7205d77198a172216bda8a1e5726295f",
+      "actual_sha256": "af4339e213c796227827b2b0dce398ad7205d77198a172216bda8a1e5726295f",
+      "hash_matches": true,
+      "path": "benchmarks/q003.pdf"
+    }
+  ],
+  "corpus_hashes_verified": true,
+  "allow_hash_mismatch": false,
+  "case_selection": {
+    "case_ids": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q27",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q26",
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "explicit_case_ids": null,
+    "include_deferred_web": false,
+    "deferred_web_cases_included": [],
+    "note": "Q28-Q30 require web search and are excluded unless --include-deferred-web is set. Without a web tool, they only measure capability-limit behavior."
+  },
+  "embedding_model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_model_revision": "unknown",
+  "chunk_size": 500,
+  "chunk_overlap": 75,
+  "agent_configuration": {
+    "llm_provider": "ollama",
+    "llm_model": "qwen3:14b-q4_K_M",
+    "ollama_host": "http://localhost:11434",
+    "max_agent_steps": 6,
+    "summary_batch_chars": 8000,
+    "max_summary_batches": 12,
+    "available_tools": [
+      "search_documents",
+      "calculator",
+      "get_document_metadata",
+      "summarize_document"
+    ],
+    "system_prompt_sha256": "b047f441ebd6e34f45ff3966852d3ba797d66d884b0bb301021fd8dfa1aff4d4",
+    "judge_faithfulness": false,
+    "supporting_context_chars": 6000
+  },
+  "scoring_configuration": {
+    "tool_selection": "Case-specific required/allowed tool sets are derived from benchmark behavior labels and requires_calculation flags.",
+    "faithfulness": "Default scoring is a deterministic grounding proxy from source and citation overlap. With --judge-faithfulness, the configured local Ollama model also judges the answer against saved supporting chunks.",
+    "citation_unit": "filename_and_one_based_pdf_page",
+    "behavior_checks": "Deterministic keyword/numeric checks for abstention, invalid documents, false-premise correction, metadata listing, direct answers, web-capability limits, and simple arithmetic."
+  },
+  "indexed_documents": [
+    {
+      "filename": "q001.pdf",
+      "path": "benchmarks/q001.pdf",
+      "chunk_count": 191,
+      "pages_indexed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "filename": "q002.pdf",
+      "path": "benchmarks/q002.pdf",
+      "chunk_count": 150,
+      "pages_indexed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "filename": "q003.pdf",
+      "path": "benchmarks/q003.pdf",
+      "chunk_count": 145,
+      "pages_indexed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "latency_seconds": {
+    "indexing_total": 0.735860597807914,
+    "agent_total": 1138.0563110499643,
+    "case_count": 31,
+    "case_mean": 36.71093775290665,
+    "case_median": 40.72331234603189,
+    "case_min": 8.498875722056255,
+    "case_max": 61.45192947005853
+  },
+  "resource_measurements": {
+    "before_index": {
+      "nvidia_smi": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4060 Ti",
+          "memory_used_mb": 9408,
+          "memory_total_mb": 16380
+        }
+      ],
+      "torch_cuda": {
+        "available": true,
+        "device_index": 0,
+        "device_name": "NVIDIA GeForce RTX 4060 Ti",
+        "memory_allocated_mb": 0.0,
+        "memory_reserved_mb": 0.0,
+        "max_memory_allocated_mb": 0.0,
+        "max_memory_reserved_mb": 0.0
+      }
+    },
+    "after_index": {
+      "nvidia_smi": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4060 Ti",
+          "memory_used_mb": 9977,
+          "memory_total_mb": 16380
+        }
+      ],
+      "torch_cuda": {
+        "available": true,
+        "device_index": 0,
+        "device_name": "NVIDIA GeForce RTX 4060 Ti",
+        "memory_allocated_mb": 94.77685546875,
+        "memory_reserved_mb": 416.0,
+        "max_memory_allocated_mb": 240.05908203125,
+        "max_memory_reserved_mb": 416.0
+      }
+    },
+    "after_agent": {
+      "nvidia_smi": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4060 Ti",
+          "memory_used_mb": 9977,
+          "memory_total_mb": 16380
+        }
+      ],
+      "torch_cuda": {
+        "available": true,
+        "device_index": 0,
+        "device_name": "NVIDIA GeForce RTX 4060 Ti",
+        "memory_allocated_mb": 94.77685546875,
+        "memory_reserved_mb": 416.0,
+        "max_memory_allocated_mb": 240.05908203125,
+        "max_memory_reserved_mb": 416.0
+      }
+    }
+  },
+  "dependency_versions": {
+    "pydantic": "2.13.5",
+    "python-dotenv": "1.2.3",
+    "PyMuPDF": "1.28.2",
+    "sentence-transformers": "5.7.0",
+    "faiss-cpu": "1.15.1",
+    "numpy": "2.4.6",
+    "ollama": "0.6.3",
+    "torch": "2.14.0"
+  },
+  "python": {
+    "version": "3.11.9",
+    "executable": "/source/RAG_research_assistance/.venv/bin/python",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.35"
+  }
+}
