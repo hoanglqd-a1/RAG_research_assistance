@@ -249,7 +249,7 @@ safety boundaries, while the model selects the sequence dynamically.
 - Scanned PDFs, complex tables, and layout reconstruction require OCR/parsing work.
 - Chunk size and summary limits use characters rather than tokenizer counts.
 - Summary input is capped by `MAX_SUMMARY_BATCHES`; the result reports truncation.
-- There is no authentication, web search, reranking, hybrid search, long-term
+- There is no authentication, web search, reranking, long-term
   memory, background autonomy, or multi-agent orchestration.
 - Tool traces show observable actions, not private chain-of-thought. -->
 # BM25 retrieval
@@ -274,3 +274,74 @@ Use `.venv/bin/python` inside `RAGagent`. The pipeline still builds FAISS and
 embeddings alongside BM25 so existing document tools keep their shared corpus;
 BM25 query scoring itself uses only CPU and needs no generation model. Both
 evaluation runners record retrieval mode, BM25 parameters, and dependency versions.
+
+## Hybrid retrieval (BM25 + vector search)
+
+Set `RETRIEVAL_MODE=hybrid` to combine FAISS semantic retrieval with BM25 keyword
+retrieval. Direct RAG, the agent's `search_documents` tool, and both evaluation
+runners use the same mode selection. The default remains `dense`; generation,
+metadata lookup, and document summarization are unchanged.
+
+The implementation is explicit in `app/rag/retriever.py`:
+
+1. Retrieve `max(HYBRID_CANDIDATE_K, top_k)` candidates from each backend.
+2. Identify chunks by `(filename, page, chunk_id)`. A local chunk ID alone can
+   occur in multiple documents, so it is not a safe fusion key.
+3. For each ranking, add `1 / (HYBRID_RRF_K + rank)` to each chunk's score.
+   Ranks start at one. Chunks appearing in both lists receive both contributions;
+   a duplicate inside one list contributes only once.
+4. Sort the union by fused score and return only the final `top_k` chunks.
+   Equal scores retain dense-first insertion order for deterministic results.
+
+This is equal-weight **Reciprocal Rank Fusion (RRF)**. BM25 scores and cosine
+similarities have different scales, so adding their raw scores would give an
+arbitrary advantage to one backend. RRF uses ranking positions instead.
+
+For example, a chunk ranked second in both lists scores `2 / (60 + 2)`, about
+`0.03226`. A chunk ranked first in only one list scores `1 / (60 + 1)`, about
+`0.01639`. The shared chunk ranks higher because both searches support it.
+Returned scores are **RRF relevance scores**, not cosine similarities,
+probabilities, or confidence estimates. Original chunk text and metadata remain
+unchanged; identical pages are not collapsed because distinct chunks can hold
+different evidence.
+
+Configuration (copy these settings into your `.env` if desired):
+
+```dotenv
+RETRIEVAL_MODE=hybrid
+HYBRID_CANDIDATE_K=20
+HYBRID_RRF_K=60
+```
+
+The candidate count controls how far down each backend's ranking fusion can see.
+The RRF constant smooths the effect of rank differences; it is **not** the number
+of results. These are initial defaults, not benchmark-tuned optimal settings.
+If one backend returns no matches, fusion uses the other. Backend exceptions
+propagate to existing error handling rather than silently changing modes.
+
+Run offline tests without downloading an embedding model or calling an LLM:
+
+```bash
+python -m pytest tests/test_hybrid_retrieval.py tests/test_bm25.py tests/test_retrieval.py -q
+```
+
+Evaluate on Linux using a new output directory to preserve existing runs:
+
+```bash
+RETRIEVAL_MODE=hybrid python -m scripts.evaluate_retrieval --output-dir benchmark_results/hybrid_baseline
+```
+
+PowerShell equivalent:
+
+```powershell
+$env:RETRIEVAL_MODE = "hybrid"
+python -m scripts.evaluate_retrieval --output-dir benchmark_results/hybrid_baseline
+# Remove the process override afterward to use .env configuration again.
+Remove-Item Env:RETRIEVAL_MODE
+```
+
+The benchmark records the retrieval mode, candidate count, and RRF constant.
+Compare against dense and BM25 using the same corpus, chunking, questions, and
+top-k values. Hybrid search is not guaranteed to improve retrieval: it can still
+miss evidence, favor related but unhelpful chunks, and fail multi-paper coverage.
+No reranker, query rewriting, or per-document routing is introduced here.

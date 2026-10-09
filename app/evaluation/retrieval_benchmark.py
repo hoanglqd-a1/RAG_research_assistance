@@ -225,15 +225,15 @@ def build_pipeline(project_settings: Any) -> Any:
     from app.rag.pipeline import RetrievalPipeline
     from app.rag.vector_store import FaissVectorStore
     from app.rag.bm25_store import BM25Store
-    from app.rag.retriever import BM25Retriever, VectorRetriever
+    from app.rag.retriever import build_retriever
 
     embedding_service = EmbeddingService(project_settings.embedding_model_name)
     vector_store = FaissVectorStore()
     bm25_store = BM25Store(project_settings.bm25_k1, project_settings.bm25_b)
-    retriever = (
-        BM25Retriever(bm25_store)
-        if project_settings.retrieval_mode == "bm25"
-        else VectorRetriever(embedding_service, vector_store)
+    retriever = build_retriever(
+        project_settings.retrieval_mode, embedding_service, vector_store, bm25_store,
+        candidate_k=project_settings.hybrid_candidate_k,
+        rrf_k=project_settings.hybrid_rrf_k,
     )
     return RetrievalPipeline(
         loader=DocumentLoader(),
@@ -499,16 +499,19 @@ def build_run_metadata(
             "bm25_k1": project_settings.bm25_k1,
             "bm25_b": project_settings.bm25_b,
             "bm25_tokenizer": "casefold + Unicode word tokens; no stemming",
+            "hybrid_candidate_k": project_settings.hybrid_candidate_k,
+            "hybrid_rrf_k": project_settings.hybrid_rrf_k,
+            "hybrid_fusion": "equal-weight reciprocal rank fusion",
             "pipeline": "RetrievalPipeline",
             "loader": "DocumentLoader",
             "chunker": "TextChunker",
             "embedding_service": "EmbeddingService",
             "vector_store": "FaissVectorStore",
-            "similarity": (
-                "BM25Okapi relevance"
-                if project_settings.retrieval_mode == "bm25"
-                else "cosine via normalized inner product"
-            ),
+            "similarity": {
+                "bm25": "BM25Okapi relevance",
+                "dense": "cosine via normalized inner product",
+                "hybrid": "reciprocal rank fusion score (not cosine similarity)",
+            }[project_settings.retrieval_mode],
             "query_strategy": "run max K once per question and score prefixes",
             "score_unit": "filename_and_one_based_pdf_page",
             "page_ndcg_definition": (

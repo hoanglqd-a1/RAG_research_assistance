@@ -14,7 +14,7 @@ from app.rag.document_loader import DocumentLoader
 from app.rag.embeddings import EmbeddingService
 from app.rag.generator import RagGenerator
 from app.rag.pipeline import RetrievalPipeline
-from app.rag.retriever import BM25Retriever, RetrievalProvider, VectorRetriever
+from app.rag.retriever import RetrievalProvider, build_retriever
 from app.rag.vector_store import FaissVectorStore
 
 
@@ -34,10 +34,10 @@ def build_services(settings: Settings) -> ApplicationServices:
     embedding_service = EmbeddingService(settings.embedding_model_name)
     vector_store = FaissVectorStore()
     bm25_store = BM25Store(settings.bm25_k1, settings.bm25_b)
-    retriever = (
-        BM25Retriever(bm25_store)
-        if settings.retrieval_mode == "bm25"
-        else VectorRetriever(embedding_service, vector_store)
+    retriever = build_retriever(
+        settings.retrieval_mode, embedding_service, vector_store, bm25_store,
+        candidate_k=settings.hybrid_candidate_k,
+        rrf_k=settings.hybrid_rrf_k,
     )
     pipeline = RetrievalPipeline(
         DocumentLoader(),
