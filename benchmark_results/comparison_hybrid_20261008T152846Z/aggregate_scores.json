@@ -1,0 +1,239 @@
+{
+  "all_retrieval_eligible": {
+    "question_count": 23,
+    "question_ids": [
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25",
+      "Q27"
+    ],
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.5652173913043478,
+        "page_recall": 0.5108695652173914,
+        "page_mrr": 0.5652173913043478,
+        "page_ndcg": 0.5652173913043478,
+        "complete_evidence": 0.4782608695652174
+      },
+      "3": {
+        "page_hit": 0.8260869565217391,
+        "page_recall": 0.7572463768115942,
+        "page_mrr": 0.6884057971014493,
+        "page_ndcg": 0.6860713942586485,
+        "complete_evidence": 0.6956521739130435
+      },
+      "5": {
+        "page_hit": 0.8260869565217391,
+        "page_recall": 0.7572463768115942,
+        "page_mrr": 0.6884057971014493,
+        "page_ndcg": 0.6826410170399243,
+        "complete_evidence": 0.6956521739130435
+      }
+    }
+  },
+  "narrative_retrieval": {
+    "question_count": 8,
+    "question_ids": [
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10",
+      "Q27"
+    ],
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.5,
+        "page_recall": 0.34375,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.5,
+        "complete_evidence": 0.25
+      },
+      "3": {
+        "page_hit": 0.75,
+        "page_recall": 0.5520833333333334,
+        "page_mrr": 0.625,
+        "page_ndcg": 0.5483566009043177,
+        "complete_evidence": 0.375
+      },
+      "5": {
+        "page_hit": 0.75,
+        "page_recall": 0.5520833333333334,
+        "page_mrr": 0.625,
+        "page_ndcg": 0.5384942664004858,
+        "complete_evidence": 0.375
+      }
+    }
+  },
+  "table_quantitative": {
+    "question_count": 15,
+    "question_ids": [
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25"
+    ],
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.6,
+        "page_recall": 0.6,
+        "page_mrr": 0.6,
+        "page_ndcg": 0.6,
+        "complete_evidence": 0.6
+      },
+      "3": {
+        "page_hit": 0.8666666666666667,
+        "page_recall": 0.8666666666666667,
+        "page_mrr": 0.7222222222222222,
+        "page_ndcg": 0.7595192840476249,
+        "complete_evidence": 0.8666666666666667
+      },
+      "5": {
+        "page_hit": 0.8666666666666667,
+        "page_recall": 0.8666666666666667,
+        "page_mrr": 0.7222222222222222,
+        "page_ndcg": 0.7595192840476249,
+        "complete_evidence": 0.8666666666666667
+      }
+    }
+  },
+  "category:narrative_retrieval": {
+    "question_count": 7,
+    "question_ids": [
+      "Q04",
+      "Q05",
+      "Q06",
+      "Q07",
+      "Q08",
+      "Q09",
+      "Q10"
+    ],
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.5714285714285714,
+        "page_recall": 0.39285714285714285,
+        "page_mrr": 0.5714285714285714,
+        "page_ndcg": 0.5714285714285714,
+        "complete_evidence": 0.2857142857142857
+      },
+      "3": {
+        "page_hit": 0.8571428571428571,
+        "page_recall": 0.630952380952381,
+        "page_mrr": 0.7142857142857143,
+        "page_ndcg": 0.6266932581763631,
+        "complete_evidence": 0.42857142857142855
+      },
+      "5": {
+        "page_hit": 0.8571428571428571,
+        "page_recall": 0.630952380952381,
+        "page_mrr": 0.7142857142857143,
+        "page_ndcg": 0.6154220187434124,
+        "complete_evidence": 0.42857142857142855
+      }
+    }
+  },
+  "category:table_quantitative": {
+    "question_count": 15,
+    "question_ids": [
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q15",
+      "Q16",
+      "Q17",
+      "Q18",
+      "Q19",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q24",
+      "Q25"
+    ],
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.6,
+        "page_recall": 0.6,
+        "page_mrr": 0.6,
+        "page_ndcg": 0.6,
+        "complete_evidence": 0.6
+      },
+      "3": {
+        "page_hit": 0.8666666666666667,
+        "page_recall": 0.8666666666666667,
+        "page_mrr": 0.7222222222222222,
+        "page_ndcg": 0.7595192840476249,
+        "complete_evidence": 0.8666666666666667
+      },
+      "5": {
+        "page_hit": 0.8666666666666667,
+        "page_recall": 0.8666666666666667,
+        "page_mrr": 0.7222222222222222,
+        "page_ndcg": 0.7595192840476249,
+        "complete_evidence": 0.8666666666666667
+      }
+    }
+  },
+  "category:abstention_and_false_premise": {
+    "question_count": 1,
+    "question_ids": [
+      "Q27"
+    ],
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,2465 @@
+[
+  {
+    "id": "Q04",
+    "category": "narrative_retrieval",
+    "question": "What off-the-shelf priors does Shape of Motion use, and why are they useful?",
+    "required_evidence_groups": [
+      {
+        "group_id": "priors_and_purpose",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 1
+          },
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 3
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.020603199998731725,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.25,
+        "page_ndcg": 0.43067655807339306,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "priors_and_purpose"
+        ],
+        "first_match_rank": 4
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 1,
+        "chunk_id": "doc-0-chunk-6",
+        "score": 0.563007116317749,
+        "matched_group_ids": [],
+        "text": "nd partial. Our second insight is to de-\nsign a deformation representation, MoSca, derived from the\nabove foundational priors, exploiting a physical deformation\nprior. Although the real-world geometry and appearance are\ncomplex and include high-frequency details, the underlying\ndeformation that drives these geometries is usually compact\n(low-rank) and smooth. MoSca leverages this property by\ndisentangling the 3D geometry and motion, representing the\ndeformation with sparse graph nodes that can",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 13,
+        "chunk_id": "doc-12-chunk-5",
+        "score": 0.5045269131660461,
+        "matched_group_ids": [],
+        "text": "sence of motion. arXiv preprint\narxiv:2410.03825, 2024. 7, 8\n[116] Zhoutong Zhang, Forrester Cole, Zhengqi Li, Michael Ru-\nbinstein, Noah Snavely, and William T Freeman. Structure\nand motion from casual videos. In European Conference on\nComputer Vision, pages 20–37. Springer, 2022. 8\n[117] Wang Zhao, Shaohui Liu, Hengkai Guo, Wenping Wang,\nand Yong-Jin Liu.\nParticleSfM: Exploiting Dense Point\nTrajectories for Localizing Moving Cameras in the Wild. In\nEuropean conference on computer vision",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 12,
+        "chunk_id": "doc-11-chunk-9",
+        "score": 0.49644774198532104,
+        "matched_group_ids": [],
+        "text": ", 2021. 2\n[98] Chaoyang Wang, Peiye Zhuang, Aliaksandr Siarohin, Junli\nCao, Guocheng Qian, Hsin-Ying Lee, and Sergey Tulyakov.\nDiffusion priors for dynamic view synthesis from monocular\nvideos. arXiv preprint arXiv:2401.05583, 2024. 6\n[99] Qianqian Wang, Vickie Ye, Hang Gao, Jake Austin, Zhengqi\nLi, and Angjoo Kanazawa. Shape of motion: 4d reconstruc-\ntion from a single video. 2024. 2, 6\n[100] Shuzhe Wang, Vincent Leroy, Yohann Cabon, Boris\nChidlovskii, and Jerome Revaud. Dust3r: Geometric",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q001.pdf",
+        "page": 1,
+        "chunk_id": "doc-0-chunk-7",
+        "score": 0.4920720160007477,
+        "matched_group_ids": [
+          "priors_and_purpose"
+        ],
+        "text": "ned nature of the 4D recon-\nstruction problem. In this work, we tackle this challenge\nwith two key insights. The first is that, while the image\nspace dynamics can be complex and discontinuous, the un-\nderlying 3D motion is a composition of continuous simple\nrigid motions. Our second insight is that data-driven priors\nprovide complementary, though noisy cues, that aggregate\n1\narXiv:2407.13764v2 [cs.CV] 16 Oct 2025",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q001.pdf",
+        "page": 13,
+        "chunk_id": "doc-12-chunk-12",
+        "score": 0.48719459772109985,
+        "matched_group_ids": [],
+        "text": "y in the presence of motion. arXiv preprint\narxiv:2410.03825, 2024. 2\n[127] Zhoutong\nZhang,\nForrester\nCole,\nRichard\nTucker,\nWilliam T Freeman, and Tali Dekel. Consistent depth of\nmoving objects in video. ACM Transactions on Graphics\n(TOG), 40(4), 2021. 2\n[128] Zhoutong Zhang, Forrester Cole, Zhengqi Li, Michael Ru-\nbinstein, Noah Snavely, and William T Freeman. Structure\nand motion from casual videos. In European Conference\non Computer Vision. Springer, 2022. 2\n[129] Yang Zheng, Adam W Harley,",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q05",
+    "category": "narrative_retrieval",
+    "question": "How is a MoSca graph node defined, and how is a dense SE(3) deformation obtained from the sparse graph?",
+    "required_evidence_groups": [
+      {
+        "group_id": "node_and_deformation",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 3
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.012013899999146815,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "node_and_deformation"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "node_and_deformation"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "node_and_deformation"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-8",
+        "score": 0.6176835894584656,
+        "matched_group_ids": [
+          "node_and_deformation"
+        ],
+        "text": ") = Q(𝑖)\n𝑡dst (Q(𝑖)\n𝑡src)−1 and w = {𝑤𝑖} are skinning\nweights computed from RBFs parameterized by radius 𝑟(𝑖):\nw_i (\\mb x , t _{\\t e xt {\nsrc} })\n=\\e xp { ( -{\\|\\mb x-\\mb t^{(i)}_{t_{\\text {src}}}\\|_2^2}/{2r^{(i)}})} \\in \\mathbb R^+ \\label {eq: skinning}.\n(5)\nIn summary, MoSca (V, E) encodes the deformation field\nthrough skinning on a structured, sparse trajectory graph. In\nthe following sections, we will demonstrate how to recon-\nstruct MoSca and attach Gaussians onto it to produce the\nfinal",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 1,
+        "chunk_id": "doc-0-chunk-7",
+        "score": 0.5827653408050537,
+        "matched_group_ids": [],
+        "text": "y and motion, representing the\ndeformation with sparse graph nodes that can be smoothly\ninterpolated (Sec. 3.1). Another physical prior we exploit\n1\narXiv:2405.17421v2 [cs.CV] 29 Nov 2024",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-1",
+        "score": 0.5727210640907288,
+        "matched_group_ids": [
+          "node_and_deformation"
+        ],
+        "text": "d with MoSca (Sec. 3.1), and fused globally to model the dynamic scene. The entire representation is rendered with Gaussian\nSplatting and optimized with photometric losses (Sec. 3.2.4).\nMotion Scaffold Graph Definition. Intuitively, the MoSca\ngraph nodes V = {v(𝑚)}𝑀\n𝑚=1 are 6-DoF trajectories that cap-\nture the underlying low-rank, smooth motion of the scene.\nThe number of nodes 𝑀is significantly smaller (e.g., see\nTab. 7) than the number of points required to represent the\nscene. Specifically,",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q002.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-3",
+        "score": 0.5656429529190063,
+        "matched_group_ids": [
+          "node_and_deformation"
+        ],
+        "text": "s. To properly interpolate the node-encoded trajectories\nand regularize the deformation, we organize the nodes v(𝑚)\ninto a topology. We define the MoSca graph edges E as:\n&\\ m c {E}(m) = \\t\next {KNN}_{n\\in \\{1,\\ldots , M\\}}\\left [D_{\\text {curve}}(m,n)\\right ], \\nonumber \\\\ & D_{\\text {curve}}(m,n) = \\max _{t=1,2,\\ldots , T} \\|\\mb t^{(m)}_t - \\mb t^{(n)}_t\\|, \\label {eq: def_topo\n}\n(2)\nwhere KNN denotes the K-nearest neighbors under the curve\ndistance metric 𝐷curve. This metric captures the",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 2,
+        "chunk_id": "doc-1-chunk-13",
+        "score": 0.5570803880691528,
+        "matched_group_ids": [],
+        "text": "mpact, and structured graph (V, E),\nnamed 4D Motion Scaffold (MoSca), which encodes these\nlocal “eigen” motions and interpolates the dense deforma-\ntion field.\n2",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q06",
+    "category": "narrative_retrieval",
+    "question": "Why does SplineGS use cubic Hermite splines instead of a fixed-degree polynomial trajectory model?",
+    "required_evidence_groups": [
+      {
+        "group_id": "spline_vs_polynomial_reasoning",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.012761600002704654,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 4,
+        "chunk_id": "doc-3-chunk-2",
+        "score": 0.6752905249595642,
+        "matched_group_ids": [],
+        "text": "line\nNew Spline\nReduce\n1 Ctrl. Point\nLeast\nSquare\nApprox.\nEq. 7\n2D Proj.\n2D Proj.\nError\nKeep\nUpdate to\nCubic Hermite Spline Basis\nCubic Hermite Spline Basis\n3D Track\nEq. 5\nSpline\nw/ Initial\nControl Points\nEq. 6\nLeast\nSquare\nApprox.\nDepth\nDepth\n2D Track\n2D Track\nThe trajectory\nof a Dynamic\n3D Gaussian G\nAcross t\nGround\nTruth\nEq. 16\nGeometric Consistency\nWorld Coord.\nWorld Coord.\nEq. 13\n② Compute tangent\n③ Compute u(t)\n① Compute tr from t (Eq. 4)\nEq. 8\nFigure 2. Overview of SplineGS. Our SplineGS",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 4,
+        "chunk_id": "doc-3-chunk-3",
+        "score": 0.5909392833709717,
+        "matched_group_ids": [],
+        "text": "ompute tr from t (Eq. 4)\nEq. 8\nFigure 2. Overview of SplineGS. Our SplineGS leverages spline-based functions to model the deformation of dynamic 3D Gaussians\nwith a novel Motion-Adaptive Spline (MAS) architecture. It is composed of sets of learnable control points based on a cubic Hermite\nspline function [2, 7] to accurately model the trajectory of each dynamic 3D Gaussian and to achieve faster rendering speed. To avoid any\npreprocessing of camera parameters, i.e. COLMAP-free, we adopt a",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 4,
+        "chunk_id": "doc-3-chunk-5",
+        "score": 0.5523666143417358,
+        "matched_group_ids": [],
+        "text": "e cubic Hermite spline\nfunction [2, 7] to model the mean of each dynamic 3D Gaus-\nsian at time t as\nµ(t) = S(t, P),\n(3)\nwhere P = {pk|pk ∈R3}k∈[0,Nc−1] is a set of Nc learnable\ncontrol points, serving as an additional attribute for each\ndynamic 3D Gaussian, and S(t, P) is formulated as\nS(t, P) = (2t3\nr −3t2\nr + 1)p⌊ts⌋+ (t3\nr −2t2\nr + tr)m⌊ts⌋\n+(−2t3\nr + 3t2\nr)p⌊ts⌋+1 + (t3\nr −t2\nr)m⌊ts⌋+1,\ntr = ts −⌊ts⌋,\nts = tn(Nc −1),\ntn = t/(Nf −1),\n(4)\nwhere mk is the approximated tangent of the control",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-12",
+        "score": 0.5327847003936768,
+        "matched_group_ids": [],
+        "text": "h utilizes a cubic Hermite spline function [2, 7] to ac-\ncurately model the continuous trajectory with a small num-\nber of control points. For MAS, we introduce a Motion-\nAdaptive Control points Pruning (MACP) method that ef-\nfectively adjusts the number of control points for each dy-\nnamic 3D Gaussian, taking into account the object’s motion\ntypes and degrees.\nIn the following sections, we detail the process of our\nMAS method in Sec. 4.2, followed by the camera parame-\nter estimation process",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-9",
+        "score": 0.5311627388000488,
+        "matched_group_ids": [],
+        "text": "motion tracking. We visualize\n2D pixel tracks to analyze motions of dynamic 3D Gaussians.\n5.2. Ablation Study\nMotion-Adaptive Spline (MAS). To demonstrate the effec-\ntiveness of MAS, we replace the MAS model with various\ndeformation models, including an MLP, a grid-based model,\npolynomial functions of third degree (denoted as ‘Poly\n(3rd)’) and tenth degree (denoted as ‘Poly (10th)’), and a\n7",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q07",
+    "category": "narrative_retrieval",
+    "question": "Compare how Shape of Motion, MoSca, and SplineGS handle camera parameters.",
+    "required_evidence_groups": [
+      {
+        "group_id": "shape_of_motion_inputs",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 2
+          }
+        ]
+      },
+      {
+        "group_id": "shape_of_motion_camera_settings",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 5
+          }
+        ]
+      },
+      {
+        "group_id": "mosca_camera_pipeline",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 2
+          }
+        ]
+      },
+      {
+        "group_id": "splinegs_camera_pipeline",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 3
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.009509499999694526,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 0.25,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.2960819109658652,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [
+          "splinegs_camera_pipeline"
+        ],
+        "first_match_rank": 2
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 0.25,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.24630238874073,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [
+          "splinegs_camera_pipeline"
+        ],
+        "first_match_rank": 2
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 12,
+        "chunk_id": "doc-11-chunk-8",
+        "score": 0.6428145170211792,
+        "matched_group_ids": [],
+        "text": "our SplineGS with MAS directly\nmodels the motion trajectories of dynamic 3D Gaussians,\nenabling the extraction of more reasonable 3D trajectories,\nas shown in Fig. 10.\nE. Additional Details for Methodology\nCamera Intrinsic. To predict the shared camera intrinsics\nfor our camera parameter estimation, we adopt a pinhole\ncamera model which is widely used in COLMAP-free novel\n2",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-9",
+        "score": 0.640249490737915,
+        "matched_group_ids": [
+          "splinegs_camera_pipeline"
+        ],
+        "text": "e the\ntime-dependent rotation qi and scale si by modeling them\nas learnable parameters of time.\n4. Proposed Method: SplineGS\n4.1. Overview of SplineGS\nWe describe the overall architecture of SplineGS in Fig. 2.\nGiven a monocular video {It|t = 0, 1, ..., Nf −1} where\nNf is the total number of frames, SplineGS is designed to\nsynthesize high-quality novel spatio-temporal views with\nfast rendering speed, and to estimate the camera param-\neters, including the extrinsics [ ˆRt| ˆTt] ∈R3×4 for",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-7",
+        "score": 0.5960634350776672,
+        "matched_group_ids": [],
+        "text": "on of information in occluded areas – the advantages of\nMoSca are not fully showcased on NVIDIA videos.\n4.2. Camera and Correspondence\nCamera Pose.\nAnother advantage of MoSca is its nat-\nural integration of camera solving, both geometrically\nthrough tracklet-based bundle adjustment and photomet-\nrically through rendering-based refinement. We quantita-\ntively evaluate the camera pose estimation, a byproduct of\nour system, following MonST3R [115] on the SLAM dataset\nTUM-dynamics [88] and the",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-10",
+        "score": 0.5857099294662476,
+        "matched_group_ids": [
+          "splinegs_camera_pipeline"
+        ],
+        "text": "ate the camera param-\neters, including the extrinsics [ ˆRt| ˆTt] ∈R3×4 for each\ntime t, and the shared intrinsic ˆ\nK ∈R3×3.\nAs shown\nin Fig. 2, to stabilize joint optimization of the 3D Gaus-\nsian attributes and camera parameter estimation, we adopt\na two-stage optimization process consisting of a warm-up\nstage and a main training stage for our SplineGS architec-\nture. In the warm-up stage, we coarsely optimize the cam-\nera parameters [ ˆRt| ˆTt] and ˆ\nK using photometric and geo-\nmetric",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-13",
+        "score": 0.582160472869873,
+        "matched_group_ids": [
+          "splinegs_camera_pipeline"
+        ],
+        "text": "S method in Sec. 4.2, followed by the camera parame-\nter estimation process in Sec. 4.3. Finally, we describe the\n3",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q08",
+    "category": "narrative_retrieval",
+    "question": "Compare the motion representations used by Shape of Motion, MoSca, and SplineGS.",
+    "required_evidence_groups": [
+      {
+        "group_id": "shape_of_motion_motion",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 3
+          }
+        ]
+      },
+      {
+        "group_id": "mosca_motion",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 3
+          }
+        ]
+      },
+      {
+        "group_id": "splinegs_motion",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 3
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.013336300005903468,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-8",
+        "score": 0.6105387806892395,
+        "matched_group_ids": [],
+        "text": "as shown in Fig. 6.\nWe observe that D3DGS [49] and\nSTGS [21] cannot provide reliable motion tracking for mov-\ning objects, underscoring their limitations in modeling con-\ntinuous trajectories of dynamic 3D Gaussians. In contrast,\nSplineGS provides accurate motion tracking, demonstrat-\ning the effectiveness of our MAS for deforming dynamic\n3D Gaussians. More results are provided in Suppl.\nFigure 6. Visual comparisons for motion tracking. We visualize\n2D pixel tracks to analyze motions of dynamic",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-7",
+        "score": 0.5995903015136719,
+        "matched_group_ids": [],
+        "text": "y and precisely captures the\ncontinuous trajectories of moving objects over time, en-\nhancing the temporal consistency of rendered scenes that\ncan be checked in tOF scores [6] of Table 2.\nTo further analyze the SplineGS’s ability to model con-\ntinuous trajectories of dynamic 3D Gaussians, we visual-\nize the projected 2D motion tracking of dynamic objects in\npixel space, comparing it with D3DGS [49] and STGS [21],\nas shown in Fig. 6.\nWe observe that D3DGS [49] and\nSTGS [21] cannot provide",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 12,
+        "chunk_id": "doc-11-chunk-7",
+        "score": 0.5866903066635132,
+        "matched_group_ids": [],
+        "text": "moving object across\ntime, STGS [21] may adjust the opacities of different sets of\n3D Gaussians through their temporal opacities σi(t), rather\nthan deforming the spatial 3D positions of a single set of\n3D Gaussians along the temporal axis. While this approach\ncan produce dynamic rendering results, it may not allow for\nthe direct extraction of 3D Gaussian trajectories along the\ntemporal axis. In contrast, our SplineGS with MAS directly\nmodels the motion trajectories of dynamic 3D",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 12,
+        "chunk_id": "doc-11-chunk-0",
+        "score": 0.5830523371696472,
+        "matched_group_ids": [],
+        "text": "Method\nMemory footprint (MB) ↓\n# Gaussian (K)\n4DGS (CVPR’24) [46]\n50\n136\nD3DGS (CVPR’24) [49]\n92\n382\nEx4DGS (NeurIPS’24) [18]\n256\n436\nSTGS (CVPR’24) [21]\n19\n128\nSplineGS (Ours)\n26\n183\nTable 4. Memory footprint comparison results. ‘Memory foot-\nprint (MB)’ refers to the memory size of each trained model, while\n‘# Gaussian (K)’ represents the total number of 3D Gaussians after\ntraining.\nfind 2D pixel correspondences among given video frames.\nOur SplineGS leverages spline-based motion modeling",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-3",
+        "score": 0.5805985927581787,
+        "matched_group_ids": [],
+        "text": ". To evaluate the capabil-\nity of SplineGS to model continuous trajectories of mov-\ning objects in a scene, we compare the novel view and\ntime synthesis results of SplineGS with those of NeRF-\nbased [11, 27] and 3DGS-based [21, 46, 49] methods. For\nthis evaluation, we follow the dataset sampling strategy\nin [22], which samples 24 timestamps from the NVIDIA\ndataset [50]. In addition, to simulate a larger motion, we\nexclude frames with odd time indices in the training sets.\nTo ensure all test",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q09",
+    "category": "narrative_retrieval",
+    "question": "How do Shape of Motion and MoSca differ in the way they impose low-dimensional structure on scene motion?",
+    "required_evidence_groups": [
+      {
+        "group_id": "shape_of_motion_structure",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 1
+          }
+        ]
+      },
+      {
+        "group_id": "mosca_structure",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 3
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.010361599997850135,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 0.5,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [
+          "mosca_structure"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 0.5,
+        "page_mrr": 1.0,
+        "page_ndcg": 0.6131471927654584,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [
+          "mosca_structure"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 0.5,
+        "page_mrr": 1.0,
+        "page_ndcg": 0.6131471927654584,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [
+          "mosca_structure"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 3,
+        "chunk_id": "doc-2-chunk-1",
+        "score": 0.5962239503860474,
+        "matched_group_ids": [
+          "mosca_structure"
+        ],
+        "text": "d with MoSca (Sec. 3.1), and fused globally to model the dynamic scene. The entire representation is rendered with Gaussian\nSplatting and optimized with photometric losses (Sec. 3.2.4).\nMotion Scaffold Graph Definition. Intuitively, the MoSca\ngraph nodes V = {v(𝑚)}𝑀\n𝑚=1 are 6-DoF trajectories that cap-\nture the underlying low-rank, smooth motion of the scene.\nThe number of nodes 𝑀is significantly smaller (e.g., see\nTab. 7) than the number of points required to represent the\nscene. Specifically,",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 2,
+        "chunk_id": "doc-1-chunk-13",
+        "score": 0.5589289665222168,
+        "matched_group_ids": [],
+        "text": "mpact, and structured graph (V, E),\nnamed 4D Motion Scaffold (MoSca), which encodes these\nlocal “eigen” motions and interpolates the dense deforma-\ntion field.\n2",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-1",
+        "score": 0.5386450886726379,
+        "matched_group_ids": [],
+        "text": "rotation). In summary, the\nobjective of this geometric optimization in the third step of\nour system is Lgeo = 𝜆arapLarap +𝜆accLacc +𝜆velLvel, and we\nonly optimize rotations and invisible 3D translations, leaving\nthe visible 3D positions unchanged to prevent degeneration.\n3.2.4\nPhotometric Optimization of MoSca\nDynamic Scene Representation. An important feature of\nMoSca is that its global deformation field can transform\npoints at any time globally, enabling the fusion of all ob-\nserved video",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-8",
+        "score": 0.531242847442627,
+        "matched_group_ids": [],
+        "text": "as shown in Fig. 6.\nWe observe that D3DGS [49] and\nSTGS [21] cannot provide reliable motion tracking for mov-\ning objects, underscoring their limitations in modeling con-\ntinuous trajectories of dynamic 3D Gaussians. In contrast,\nSplineGS provides accurate motion tracking, demonstrat-\ning the effectiveness of our MAS for deforming dynamic\n3D Gaussians. More results are provided in Suppl.\nFigure 6. Visual comparisons for motion tracking. We visualize\n2D pixel tracks to analyze motions of dynamic",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-2",
+        "score": 0.5267640948295593,
+        "matched_group_ids": [],
+        "text": "rm\npoints at any time globally, enabling the fusion of all ob-\nserved video frames into a single coherent representation.\nIn the final step of the system, the optimized MoSca collects\n3D Gaussians initialized from back-projected foreground\ndepth points at all timesteps. Formally:\n\\mc G = \\ {( \\ mu _j , R_\nj , s _j,\no_j, c_j; t^{\\text {ref}}_j, \\Delta \\mb w_j) \\}_{j=1}^N, \\label {eq: dyn_gs}\n(11)\nwhere the first five attributes are the center, rotation,\nnon-isotropic scales, opacity, and",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q10",
+    "category": "narrative_retrieval",
+    "question": "Both MoSca and SplineGS are COLMAP-free. What is the main difference in how they obtain camera parameters?",
+    "required_evidence_groups": [
+      {
+        "group_id": "mosca_camera_pipeline",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 2
+          }
+        ]
+      },
+      {
+        "group_id": "splinegs_camera_pipeline",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 3
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.011243699998885859,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-2",
+        "score": 0.6227447390556335,
+        "matched_group_ids": [],
+        "text": "her meth-\nods [21, 49], we observe that COLMAP [38] fails to recover\ncamera parameters and initial point clouds on the DAVIS\ndataset [35], as also claimed in [27]. On the other hand,\nour COLMAP-free SplineGS reconstructs accurate camera\nparameters that are the ones actually used to train [21, 49],\nwhich are shown in Fig. 4 for comparison. More results on\nDAVIS [35] are provided in the Suppl.\nNovel View and Time Synthesis. To evaluate the capabil-\nity of SplineGS to model continuous trajectories",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 12,
+        "chunk_id": "doc-11-chunk-8",
+        "score": 0.560890793800354,
+        "matched_group_ids": [],
+        "text": "our SplineGS with MAS directly\nmodels the motion trajectories of dynamic 3D Gaussians,\nenabling the extraction of more reasonable 3D trajectories,\nas shown in Fig. 10.\nE. Additional Details for Methodology\nCamera Intrinsic. To predict the shared camera intrinsics\nfor our camera parameter estimation, we adopt a pinhole\ncamera model which is widely used in COLMAP-free novel\n2",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-7",
+        "score": 0.5287628173828125,
+        "matched_group_ids": [],
+        "text": "on of information in occluded areas – the advantages of\nMoSca are not fully showcased on NVIDIA videos.\n4.2. Camera and Correspondence\nCamera Pose.\nAnother advantage of MoSca is its nat-\nural integration of camera solving, both geometrically\nthrough tracklet-based bundle adjustment and photomet-\nrically through rendering-based refinement. We quantita-\ntively evaluate the camera pose estimation, a byproduct of\nour system, following MonST3R [115] on the SLAM dataset\nTUM-dynamics [88] and the",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-11",
+        "score": 0.5276627540588379,
+        "matched_group_ids": [],
+        "text": "13, 18, 19, 21, 42, 46, 49] and\nCOLMAP-free [20, 27] methods on the NVIDIA dataset\n[50]. For this comparison, we follow the evaluation config-\nuration in [27]. The results demonstrate that our SplineGS\nsignificantly outperforms SOTA methods in both the PSNR\nand LPIPS [51] metrics. Notably, SplineGS achieves 890×\nand 8,000× faster rendering speed compared to RoDynRF\n[27] and DynNeRF [11], respectively. Ex4DGS [18] and\nSTGS [21], which are designed for multi-view settings, face\n6",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-1",
+        "score": 0.5213346481323242,
+        "matched_group_ids": [],
+        "text": "6\n3.528\nCasualSAM [116]\n0.141\n0.035\n0.615\n0.071\n0.010\n1.712\nDUSt3R [100] w/ mask\n0.417\n0.250\n5.796\n0.083\n0.017\n3.567\nMonST3R [115]\n0.108\n0.042\n0.732\n0.063\n0.009\n1.217\nOurs\n0.090\n0.034\n0.312\n0.031\n0.011\n0.426\nFigure 7. Visual comparison of ablation.\npared to camera-pose-tailored SLAM-based and DuST3R-\nbased methods. Notably, some of the SLAM systems in the\ntable require known camera intrinsics, whereas MoSca does\nnot.\nCorrespondence.\nOne feature of MoSca is its ability to\nperform global fusion",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q11",
+    "category": "table_quantitative",
+    "question": "On the iPhone dataset, how much lower is Shape of Motion's 3D tracking EPE than TAPIR + Depth Anything?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 6
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.010303399998520035,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q001.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-4",
+        "score": 0.5817071795463562,
+        "matched_group_ids": [],
+        "text": "ote that these baselines\ncan only produce 3D tracks for visible regions, as the depth\nvalues for occluded points are unknown from such a 2.5D\nrepresentation.\nIn contrast, our global representation al-\nlows for modeling 3D motion through occlusions. In addi-\ntion, we include frame-space 3D tracking methods such as\nDELTA [74] and SpatialTracker [113], and transform their\ntrajectories into world coordinates using annotated camera\nposes for evaluation.\n4.3. Evaluation on iPhone Dataset\niPhone",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q001.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-3",
+        "score": 0.5542503595352173,
+        "matched_group_ids": [],
+        "text": "baselines. Specifically, we take state-of-the-art\nlong-range 2D tracks from TAPIR [16] and CoTracker [45]\nand lift them into 3D scene motion using monocular depth\nmaps produced by Depth Anything (DA) [121]. We com-\npute the correct scale and shift for each relative depth map\nfrom Depth Anything to align them with the scene. The two\nresulting baselines are called “CoTracker [45] + DA [121]”\nand “TAPIR [16] + DA [121]”. Note that these baselines\ncan only produce 3D tracks for visible regions, as",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q001.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-9",
+        "score": 0.5539737939834595,
+        "matched_group_ids": [],
+        "text": "me\nstep. In addition, we report the percentage of points that\nfall within a given threshold of the ground truth 3D location\nδ.05\n3D = 5cm and δ.10\n3D = 10cm in metric scale.\nLong-Range 2D Tracking. Our 3D motion representation\ncan be easily projected onto image plane to get long-range\n2D tracks. Thus we also evaluate 2D tracking performance\nin terms of both position and occlusion accuracy. Follow-\ning the metrics introduced in the TAP-Vid benchmark [15],\nwe report the Average Jaccard (AJ),",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q001.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-0",
+        "score": 0.5349994897842407,
+        "matched_group_ids": [],
+        "text": "Input\nPCA\nCoef.\nPred.\nDepth\nInput\nPCA\nCoef.\nPred.\nDepth\nFigure 5. Visualization of motion coefficients after PCA and\npredicted depth maps on iPhone dataset.\nThe motion coef-\nficients encode information regarding rigid moving components.\nFor instance, our motion coefficient PCA produces constant color\nfor the block in the second example which exhibits rigid motion.\nshort-range view-to-view scene flow, which we chain into\nlong-range 3D tracks for our evaluation. Deformable-3D-\nGS (D-3DGS) [122]",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q001.pdf",
+        "page": 4,
+        "chunk_id": "doc-3-chunk-6",
+        "score": 0.5336640477180481,
+        "matched_group_ids": [],
+        "text": "t→t′(p), Π is a perspective pro-\njection operation, and (·)[3] is the third element of a vector.\n3.3. Optimization\nWe prepare the following estimates using off-the-shelf\nmethods in our optimization: 1) camera parameters esti-\nmated by MegaSaM [62], 2) masks for the moving objects\nfor each frame {Mt}, which can be easily obtained using\nTrack-Anything [50, 120] with a few user clicks, 3) monoc-\nular depth maps {Dt} computed using state-of-the-art rela-\ntive depth estimation method such as Depth",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q12",
+    "category": "table_quantitative",
+    "question": "On the iPhone dataset, by how many percentage points does Shape of Motion improve 2D tracking AJ over SpatialTracker in world coordinates?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 6
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.014724300002853852,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q001.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-9",
+        "score": 0.6349393129348755,
+        "matched_group_ids": [],
+        "text": "me\nstep. In addition, we report the percentage of points that\nfall within a given threshold of the ground truth 3D location\nδ.05\n3D = 5cm and δ.10\n3D = 10cm in metric scale.\nLong-Range 2D Tracking. Our 3D motion representation\ncan be easily projected onto image plane to get long-range\n2D tracks. Thus we also evaluate 2D tracking performance\nin terms of both position and occlusion accuracy. Follow-\ning the metrics introduced in the TAP-Vid benchmark [15],\nwe report the Average Jaccard (AJ),",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q001.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-4",
+        "score": 0.6211401224136353,
+        "matched_group_ids": [],
+        "text": "ote that these baselines\ncan only produce 3D tracks for visible regions, as the depth\nvalues for occluded points are unknown from such a 2.5D\nrepresentation.\nIn contrast, our global representation al-\nlows for modeling 3D motion through occlusions. In addi-\ntion, we include frame-space 3D tracking methods such as\nDELTA [74] and SpatialTracker [113], and transform their\ntrajectories into world coordinates using annotated camera\nposes for evaluation.\n4.3. Evaluation on iPhone Dataset\niPhone",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q001.pdf",
+        "page": 13,
+        "chunk_id": "doc-12-chunk-4",
+        "score": 0.5739173889160156,
+        "matched_group_ids": [],
+        "text": "n, and Xiaowei Zhou. Spatialtracker:\nTracking any 2d pixels in 3d space.\nIn Proceedings of\nthe IEEE/CVF Conference on Computer Vision and Pattern\nRecognition, 2024. 2, 6, 7\n[114] Yuxi Xiao, Jianyuan Wang, Nan Xue, Nikita Karaev, Yuri\nMakarov, Bingyi Kang, Xing Zhu, Hujun Bao, Yujun Shen,\nand Xiaowei Zhou.\nSpatialtrackerv2: 3d point tracking\nmade easy. In Proceedings of the IEEE/CVF International\nConference on Computer Vision, 2025. 8\n[115] Haofei Xu, Jing Zhang, Jianfei Cai, Hamid Rezatofighi,",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q001.pdf",
+        "page": 16,
+        "chunk_id": "doc-15-chunk-7",
+        "score": 0.5452969074249268,
+        "matched_group_ids": [],
+        "text": "experiments. For iPhone\ndataset [25], we observed that the provided camera poses\nfrom ARKit are not accurate, we thus perform an addi-\ntional global bundle adjustment using COLMAP [88] to re-\nfine the camera poses while fixing the camera intrinsics. To\nmaintain metric scale after refinement, we compute a global\nSIM(3) transformation for each scene to align the refined\ncamera poses with the original metric-scale camera poses.\nThis allows us to evaluate 3D tracking performance in met-\nric",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q001.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-8",
+        "score": 0.543596625328064,
+        "matched_group_ids": [],
+        "text": "57.8\nTable 4. Ablation Studies on iPhone dataset.\n2) “Per-Gaussian SE(3)”: replacing our motion represen-\ntation with naive per-Gaussian SE(3) motion trajectories,\nand 2) “Transl. Bases”: keeping the motion bases represen-\ntation but only using translational bases instead of SE(3).\nWe find that SE(3) bases significantly improve 3D tracking\nover both translational bases and per-Gaussian translational\nmotion. It also outperforms per-Gaussian SE(3) in overall\naccuracy and offers noticeably better",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q13",
+    "category": "table_quantitative",
+    "question": "On Kubric MOVi-F, how much does Shape of Motion improve delta_3D^0.10 accuracy over CoTracker + Depth Anything?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 7
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.016698100000212435,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q001.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-12",
+        "score": 0.633886456489563,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "E↓\nδ.05\n3D ↑\nδ.10\n3D ↑\nCoTracker [45]+DA [121]\n0.19\n34.4\n56.5\nTAPIR [16]+DA [121]\n0.20\n34.0\n56.2\nOurs\n0.16\n39.8\n62.2\nTable 2. 3D Tracking evaluation on Kubric dataset.\nThe Kubric MOVi-F dataset contains short 24-frame videos\n7",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q001.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-1",
+        "score": 0.5713832974433899,
+        "matched_group_ids": [],
+        "text": "se across time. We use 30 scenes\nfrom the MOVi-F validation set to evaluate the accuracy of\nour long-range 3D point tracks for all points in time.\nWe\ndemonstrate\nour\nmethod\non\nthe\nsynthetic\nKubric MOVi-F dataset in long-range 3D point track-\ning across time.\nOf the above baselines, only “Co-\nTracker [45]+DA [121]” and “TAPIR [45]+DA [121]”\nyield 3D tracks for these scenes.\nFor all baselines, we\nprovide the ground truth camera intrinsics and extrinsics,\nand monocular depth estimates that have",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q001.pdf",
+        "page": 4,
+        "chunk_id": "doc-3-chunk-6",
+        "score": 0.5231682062149048,
+        "matched_group_ids": [],
+        "text": "t→t′(p), Π is a perspective pro-\njection operation, and (·)[3] is the third element of a vector.\n3.3. Optimization\nWe prepare the following estimates using off-the-shelf\nmethods in our optimization: 1) camera parameters esti-\nmated by MegaSaM [62], 2) masks for the moving objects\nfor each frame {Mt}, which can be easily obtained using\nTrack-Anything [50, 120] with a few user clicks, 3) monoc-\nular depth maps {Dt} computed using state-of-the-art rela-\ntive depth estimation method such as Depth",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q001.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-9",
+        "score": 0.4903600513935089,
+        "matched_group_ids": [],
+        "text": "me\nstep. In addition, we report the percentage of points that\nfall within a given threshold of the ground truth 3D location\nδ.05\n3D = 5cm and δ.10\n3D = 10cm in metric scale.\nLong-Range 2D Tracking. Our 3D motion representation\ncan be easily projected onto image plane to get long-range\n2D tracks. Thus we also evaluate 2D tracking performance\nin terms of both position and occlusion accuracy. Follow-\ning the metrics introduced in the TAP-Vid benchmark [15],\nwe report the Average Jaccard (AJ),",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-2",
+        "score": 0.48863476514816284,
+        "matched_group_ids": [],
+        "text": "rm\npoints at any time globally, enabling the fusion of all ob-\nserved video frames into a single coherent representation.\nIn the final step of the system, the optimized MoSca collects\n3D Gaussians initialized from back-projected foreground\ndepth points at all timesteps. Formally:\n\\mc G = \\ {( \\ mu _j , R_\nj , s _j,\no_j, c_j; t^{\\text {ref}}_j, \\Delta \\mb w_j) \\}_{j=1}^N, \\label {eq: dyn_gs}\n(11)\nwhere the first five attributes are the center, rotation,\nnon-isotropic scales, opacity, and",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q14",
+    "category": "table_quantitative",
+    "question": "According to the Shape of Motion ablation, what happens to 3D tracking when 2D track supervision is removed?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q001.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.01635619999433402,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.6309297535714575,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 2
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.6309297535714575,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 2
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-9",
+        "score": 0.5494529008865356,
+        "matched_group_ids": [],
+        "text": "motion tracking. We visualize\n2D pixel tracks to analyze motions of dynamic 3D Gaussians.\n5.2. Ablation Study\nMotion-Adaptive Spline (MAS). To demonstrate the effec-\ntiveness of MAS, we replace the MAS model with various\ndeformation models, including an MLP, a grid-based model,\npolynomial functions of third degree (denoted as ‘Poly\n(3rd)’) and tenth degree (denoted as ‘Poly (10th)’), and a\n7",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q001.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-10",
+        "score": 0.5490190386772156,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "andomly selected noisy 3D tracks\nformed by directly lifting input 2D tracks using depth maps\ninto 3D, and the rotation part as identity.\nWe find that\nskipping this initialization noticeably hurts performance.\nLastly, we remove the 2D track supervision entirely (“No\n2D Tracks”) and find it to lead to significant drop in perfor-\nmance, which verifies the importance of the 2D track super-\nvision for 3D tracking.\n5. Discussion\nLimitations.\nLike most prior monocular view synthesis\nmethods, it still",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q001.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-8",
+        "score": 0.539727509021759,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "57.8\nTable 4. Ablation Studies on iPhone dataset.\n2) “Per-Gaussian SE(3)”: replacing our motion represen-\ntation with naive per-Gaussian SE(3) motion trajectories,\nand 2) “Transl. Bases”: keeping the motion bases represen-\ntation but only using translational bases instead of SE(3).\nWe find that SE(3) bases significantly improve 3D tracking\nover both translational bases and per-Gaussian translational\nmotion. It also outperforms per-Gaussian SE(3) in overall\naccuracy and offers noticeably better",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q001.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-9",
+        "score": 0.5054833889007568,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "erforms per-Gaussian SE(3) in overall\naccuracy and offers noticeably better visual quality, as the\nlatter exhibits significantly more popping and jitter artifacts.\nNext, we ablate our training strategies including initial-\nization and supervision signal. We conduct an ablation of\n“No SE(3) Init.”, where instead of performing our initial\nSE(3) fitting stage, we initialize the translational part of\nthe motion bases with randomly selected noisy 3D tracks\nformed by directly lifting input 2D tracks",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q001.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-1",
+        "score": 0.5034264922142029,
+        "matched_group_ids": [],
+        "text": "o\nlong-range 3D tracks for our evaluation. Deformable-3D-\nGS (D-3DGS) [122] represents dynamic scenes using 3D\nGaussians [46] in the canonical space and a deformation\nMLP network that deforms the canonical 3D Gaussians into\neach view, which naturally allows 3D motion computation.\nT-NeRF [25] models dynamic scenes using time as MLP\ninput in addition to 3D locations, which does not provide\na method for extracting 3D motion, and hence they are not\nconsidered for 2D/3D tracking evaluation. Finally,",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q15",
+    "category": "table_quantitative",
+    "question": "Under the DyCheck w-pose setting reported by MoSca, how much does MoSca outperform Shape of Motion in mPSNR and mLPIPS?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 6
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.0179063000032329,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.25,
+        "page_ndcg": 0.43067655807339306,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 4
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-7",
+        "score": 0.5540673732757568,
+        "matched_group_ids": [],
+        "text": "No photometric optimization stage\n13.71\n0.480\n0.763\nOnly fuse 4 neighboring frames\n16.96\n0.663\n0.344\nOnly fuse 8 neighboring frames\n17.26\n0.664\n0.346\nTable 6. Ablation study on different priors on DyCheck [30].\nTracker\nBootsTAPIR [22]\nCoTracker-v3 [41]\nSpaTracker [106]\nDepth\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nLIDAR\n19.32\n0.264\n19.55\n0.243\n19.32\n0.259\nMetric3D-v2 [34]\n17.05\n0.331\n17.02\n0.320\n17.60\n0.301\nUniDepth [76]\n17.12\n0.323\n17.42\n0.299\n17.61\n0.300\nTable 7. More specs of MoSca on DyCheck",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-8",
+        "score": 0.5493133068084717,
+        "matched_group_ids": [],
+        "text": "17.12\n0.323\n17.42\n0.299\n17.61\n0.300\nTable 7. More specs of MoSca on DyCheck [30] (averaged)\nFPS (2x res)\nNum of fg GS\nNum of nodes\nRatio: #GS/#nodes\n37.823\n106596\n3177\n46.105\nthe scene.\n4.4. Applications\nIn-the-wild 4D reconstruction enables many interesting ap-\nplications, as shown in Fig. 6. For example, we can remove\nthe moving foreground (Figure 6-A), or remove occluders in\nan extremely challenging cup-game video to look through\nand see where the ball goes (Figure 6-B). Video object",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-8",
+        "score": 0.5477694272994995,
+        "matched_group_ids": [],
+        "text": "stem, following MonST3R [115] on the SLAM dataset\nTUM-dynamics [88] and the synthetic Sintel dataset [12].\nThe camera pose errors are shown in Table 3. Although\ncamera pose estimation is not the main focus of MoSca, it\nstill achieves comparable or even superior performance com-\nFigure 6. Application of MoSca reconstructed 4D scenes.\n7",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q002.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-4",
+        "score": 0.5215039849281311,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "ular videos—including movie clips, in-\nTable 1. Comparison on DyCheck [30], group w-pose and w/o-\npose means with or without camera pose and are averaged over all\n7 scenes on the standard 2x resolution. Group SOM-5-1x means\nusing the 5 scenes and 1x res. as in Shape-of-Motion [99].\nMethod\nmPSNR↑\nmSSIM↑\nmLPIPS↓\nT-NeRF [30]\n16.96\n0.577\n0.379\nNSFF [56]\n15.46\n0.551\n0.396\nNerfies [74]\n16.45\n0.570\n0.339\nHyperNeRF [75]\n16.81\n0.569\n0.332\nPGDVS [118]\n15.88\n0.548\n0.340\nDyPoint [119]\n16.89\n0.573\n-\nDpDy",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-1",
+        "score": 0.5205376744270325,
+        "matched_group_ids": [],
+        "text": "rotation). In summary, the\nobjective of this geometric optimization in the third step of\nour system is Lgeo = 𝜆arapLarap +𝜆accLacc +𝜆velLvel, and we\nonly optimize rotations and invisible 3D translations, leaving\nthe visible 3D positions unchanged to prevent degeneration.\n3.2.4\nPhotometric Optimization of MoSca\nDynamic Scene Representation. An important feature of\nMoSca is that its global deformation field can transform\npoints at any time globally, enabling the fusion of all ob-\nserved video",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q16",
+    "category": "table_quantitative",
+    "question": "Under MoSca's pose-free DyCheck setting, how much better is MoSca than Gaussian Marbles in mPSNR and mLPIPS?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 6
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.016019199996662792,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.6309297535714575,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 2
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.5,
+        "page_ndcg": 0.6309297535714575,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 2
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-2",
+        "score": 0.5790613889694214,
+        "matched_group_ids": [],
+        "text": "orrespondence.\nOne feature of MoSca is its ability to\nperform global fusion and provide dense correspondence.\nWe quantitatively evaluate the correspondence tracking ac-\ncuracy following DyCheck [30] and Gaussian Marbles [86].\nTab. 4 shows our state-of-the-art accuracy. Notably, MoSca\nis optimized starting from BootsTAPIR [22] on DyCheck,\nand we observe a significant improvement over the raw\ntracker after reconstruction optimization.\n4.3. Ablation Study\nWe assess the effects of different",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-6",
+        "score": 0.5729224681854248,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "Dyn.Gaussians [67]\n7.60\n-\n0.704\n4D GS [103]\n13.11\n-\n0.726\nGaussian Marbles [86]\n15.79\n-\n0.430\nOurs\n18.84\n0.676\n0.289\nw/o-pose\nOurs (w. focal)\n19.02\n0.683\n0.279\nShape-of-Motion [99]\n16.72\n0.63\n0.45\nSOM-5-1x\nOurs\n18.40\n0.67\n0.42\nternet videos, SORA-generated videos, and DAVIS[77]\nvideos—demonstrating the effectiveness of MoSca.\nDyCheck. To quantitatively evaluate our rendering results,\nwe compare our method to others on the currently most\nchallenging dataset – the iPhone DyCheck [30].",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-7",
+        "score": 0.5093889832496643,
+        "matched_group_ids": [],
+        "text": "No photometric optimization stage\n13.71\n0.480\n0.763\nOnly fuse 4 neighboring frames\n16.96\n0.663\n0.344\nOnly fuse 8 neighboring frames\n17.26\n0.664\n0.346\nTable 6. Ablation study on different priors on DyCheck [30].\nTracker\nBootsTAPIR [22]\nCoTracker-v3 [41]\nSpaTracker [106]\nDepth\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nLIDAR\n19.32\n0.264\n19.55\n0.243\n19.32\n0.259\nMetric3D-v2 [34]\n17.05\n0.331\n17.02\n0.320\n17.60\n0.301\nUniDepth [76]\n17.12\n0.323\n17.42\n0.299\n17.61\n0.300\nTable 7. More specs of MoSca on DyCheck",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-5",
+        "score": 0.48675888776779175,
+        "matched_group_ids": [],
+        "text": "g\nto a reasonable decrease in performance. We report more\nspecifications of our system in Tab. 7, where we observe near\nreal-time inference FPS and the compactness of the MoSca\nnodes compared to the actual foreground GS used to model\nTable 4. Correspondence on DyCheck [30] with PCK-T @0.05%\nMethods\nNerfies[74]\nHyperNeRf[75]\nDyn. Gauss. [67]\n4D Gauss. [103]\nPCK-T ↑\n0.4\n0.453\n0.079\n0.073\nMethods\nCoTracker[40]\nGauss.Marbles[86]\nBootsTAPIR [22]\nOurs\nPCK-T ↑\n0.803\n0.806\n0.779\n0.824\nTable 5. Ablation",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 2,
+        "chunk_id": "doc-1-chunk-0",
+        "score": 0.48063504695892334,
+        "matched_group_ids": [],
+        "text": "is the as-rigid-as-possible (ARAP) deformation, which can\nbe efficiently applied via the trajectory topology of MoSca.\nTwo important benefits arise from the above two insights:\nfirstly, MoSca can be lifted into 3D and optimized from the\ninferred 2D foundational priors (Sec. 3.2.3), and secondly,\nthe observations from all timesteps can be globally fused and\nrendered for any query time (Sec. 3.2.4). Gaussian fusion\nhappens when we deform all Gaussians observed at different\ntimes to the query",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q17",
+    "category": "table_quantitative",
+    "question": "How much does MoSca improve PCK-T over the raw BootsTAPIR tracker on DyCheck?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.01282060000085039,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-5",
+        "score": 0.568528413772583,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "g\nto a reasonable decrease in performance. We report more\nspecifications of our system in Tab. 7, where we observe near\nreal-time inference FPS and the compactness of the MoSca\nnodes compared to the actual foreground GS used to model\nTable 4. Correspondence on DyCheck [30] with PCK-T @0.05%\nMethods\nNerfies[74]\nHyperNeRf[75]\nDyn. Gauss. [67]\n4D Gauss. [103]\nPCK-T ↑\n0.4\n0.453\n0.079\n0.073\nMethods\nCoTracker[40]\nGauss.Marbles[86]\nBootsTAPIR [22]\nOurs\nPCK-T ↑\n0.803\n0.806\n0.779\n0.824\nTable 5. Ablation",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-7",
+        "score": 0.5499651432037354,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "No photometric optimization stage\n13.71\n0.480\n0.763\nOnly fuse 4 neighboring frames\n16.96\n0.663\n0.344\nOnly fuse 8 neighboring frames\n17.26\n0.664\n0.346\nTable 6. Ablation study on different priors on DyCheck [30].\nTracker\nBootsTAPIR [22]\nCoTracker-v3 [41]\nSpaTracker [106]\nDepth\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nLIDAR\n19.32\n0.264\n19.55\n0.243\n19.32\n0.259\nMetric3D-v2 [34]\n17.05\n0.331\n17.02\n0.320\n17.60\n0.301\nUniDepth [76]\n17.12\n0.323\n17.42\n0.299\n17.61\n0.300\nTable 7. More specs of MoSca on DyCheck",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-5",
+        "score": 0.4751508831977844,
+        "matched_group_ids": [],
+        "text": "119]\n26.53\n0.068\nTiNeuVox [27]\n19.74\n0.285\nD-NPC [39]\n25.64\n0.109\nHyperNeRF [75]\n17.60\n0.367\nRoDynRF [66]\n25.89\n0.067\nNSFF [56]\n24.33\n0.199\nRoDynRF [66] w/o\n25.38\n0.079\nDynNeRF [29]\n26.10\n0.082\nGaussianMarbles [86]\n22.32\n0.129\nMonoNeRF [94]\n25.62\n0.106\nOurs\n26.72\n0.070\n4DGS [103]\n21.45\n0.199\nOurs w/o\n26.54\n0.073\nCasual-FVS [51]\n24.57\n0.081\nas shown in the bottom group of Tab. 1.\nNVIDIA. We also evaluate MoSca on the widely used\nNVIDIA video dataset [112], following the protocol in Ro-\nDynRF",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-8",
+        "score": 0.4625014066696167,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "17.12\n0.323\n17.42\n0.299\n17.61\n0.300\nTable 7. More specs of MoSca on DyCheck [30] (averaged)\nFPS (2x res)\nNum of fg GS\nNum of nodes\nRatio: #GS/#nodes\n37.823\n106596\n3177\n46.105\nthe scene.\n4.4. Applications\nIn-the-wild 4D reconstruction enables many interesting ap-\nplications, as shown in Fig. 6. For example, we can remove\nthe moving foreground (Figure 6-A), or remove occluders in\nan extremely challenging cup-game video to look through\nand see where the ball goes (Figure 6-B). Video object",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-6",
+        "score": 0.43047136068344116,
+        "matched_group_ids": [],
+        "text": "widely used\nNVIDIA video dataset [112], following the protocol in Ro-\nDynRF [66]. As reported in Tab. 2 and Fig. 5, we achieve\nhigh PSNR and very competitive LPIPS results. Since the\nfacing-forward, the small-baseline setting is relatively eas-\nier compared to the realistic DyCheck dataset, where most\nareas of the dynamic scene are visible in neighboring time\nframes, reducing the need for strong regularization and fu-\nsion of information in occluded areas – the advantages of\nMoSca are not fully",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q18",
+    "category": "table_quantitative",
+    "question": "What is the effect of removing the tracking loss L_track in MoSca?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.01154070000484353,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-2",
+        "score": 0.47915175557136536,
+        "matched_group_ids": [],
+        "text": "odes, we select Gaussians with high tracking-loss Ltrack\ninduced gradients, subsample them, and convert them into\nnew MoSca nodes. To clean the representation and prune\nthe structure, we also periodically copy the dynamic fore-\nground Gaussians from a randomly selected timestep into\nthe static background and reset the foreground Gaussians\nto a low opacity. This simplifies unnecessary foreground\nGaussians. We then prune nodes whose skinning weights\ntoward all Gaussians fall below a threshold,",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-1",
+        "score": 0.4687788784503937,
+        "matched_group_ids": [],
+        "text": "+ \\lambda _\\text {track}\\mc L_\\text {track} \\nonumber \\\\ &+ \\lambda _\\text {arap}\\mc L_\\text {arap} + \\lambda _\\text {acc}\\mc L_\\text {acc}+ \\lambda _\\text {vel}\\mc L_\\text {vel} .\n(13)\nNode Control. Similar to standard 3DGS Gaussian control\ntechniques including gradient-based densification and reset-\npruning simplification, we propose a novel control policy\nover the proposed MoSca nodes. To periodically densify\nnodes, we select Gaussians with high tracking-loss Ltrack\ninduced gradients,",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-3",
+        "score": 0.45756208896636963,
+        "matched_group_ids": [],
+        "text": "re-trained 2D long-term trackers,\nour MoSca representation models long-term motion trajecto-\nries, enabling the global aggregation of observations across\nall timesteps, which leads to a more complete reconstruc-\ntion. Secondly, the structured sparse motion graph design of\nMoSca facilitates optimization. Compared to dense Gaus-\nsian geometries, its compact and smoothly interpolated mo-\ntion nodes significantly reduce the optimization space. Its\ntopology enables the effective propagation of",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q002.pdf",
+        "page": 4,
+        "chunk_id": "doc-3-chunk-10",
+        "score": 0.44674062728881836,
+        "matched_group_ids": [],
+        "text": "the\nlifted 3D positions from the nearest visible timesteps before\nand after 𝑡. From each track, we initialize a MoSca node\nv(𝑖) using the lifted positions h𝑡as the translation part and\nthe identity as the rotation, i.e., Q(𝑖)\n𝑡\n= [I, h(𝑖)\n𝑡], along with\na predefined control radius 𝑟init. In practice, we retain only\na subset of the densely inferred 2D tracklets by uniformly\nresampling nodes based on the curve distance (Eq. 2).\nGeometry Optimization. Starting from the initialized rota-\ntions and",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-6",
+        "score": 0.43788057565689087,
+        "matched_group_ids": [],
+        "text": "d with depth and RGB\nrendering losses, along with the regularization losses from\nSec. 3.2.3. To fully exploit the inferred tracklets, we also\nrender a flow/track map by rasterizing the XYZ coordinates\n5",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q19",
+    "category": "table_quantitative",
+    "question": "Which MoSca ablation causes the largest rendering-quality collapse in Table 5, and by how much does mPSNR change relative to the full model?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.017010399998980574,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-7",
+        "score": 0.5662845373153687,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "No photometric optimization stage\n13.71\n0.480\n0.763\nOnly fuse 4 neighboring frames\n16.96\n0.663\n0.344\nOnly fuse 8 neighboring frames\n17.26\n0.664\n0.346\nTable 6. Ablation study on different priors on DyCheck [30].\nTracker\nBootsTAPIR [22]\nCoTracker-v3 [41]\nSpaTracker [106]\nDepth\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nmPSNR\nmLPIPs\nLIDAR\n19.32\n0.264\n19.55\n0.243\n19.32\n0.259\nMetric3D-v2 [34]\n17.05\n0.331\n17.02\n0.320\n17.60\n0.301\nUniDepth [76]\n17.12\n0.323\n17.42\n0.299\n17.61\n0.300\nTable 7. More specs of MoSca on DyCheck",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-5",
+        "score": 0.5560152530670166,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "g\nto a reasonable decrease in performance. We report more\nspecifications of our system in Tab. 7, where we observe near\nreal-time inference FPS and the compactness of the MoSca\nnodes compared to the actual foreground GS used to model\nTable 4. Correspondence on DyCheck [30] with PCK-T @0.05%\nMethods\nNerfies[74]\nHyperNeRf[75]\nDyn. Gauss. [67]\n4D Gauss. [103]\nPCK-T ↑\n0.4\n0.453\n0.079\n0.073\nMethods\nCoTracker[40]\nGauss.Marbles[86]\nBootsTAPIR [22]\nOurs\nPCK-T ↑\n0.803\n0.806\n0.779\n0.824\nTable 5. Ablation",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-6",
+        "score": 0.48043695092201233,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "[86]\nBootsTAPIR [22]\nOurs\nPCK-T ↑\n0.803\n0.806\n0.779\n0.824\nTable 5. Ablation study on different components of the system.\nComponents\nmPSNR\nmSSIM\nmLPIPs\nFull model\n19.32\n0.706\n0.264\nNo node control\n19.28\n0.707\n0.267\nNo learnable skinning correction\n19.27\n0.707\n0.267\nNo dual quaternion blending\n19.18\n0.701\n0.276\nNo multi-level topology\n19.14\n0.701\n0.270\nNo geometric optimizaiton stage\n18.85\n0.693\n0.287\nNo photometric optimization stage\n13.71\n0.480\n0.763\nOnly fuse 4 neighboring",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 11,
+        "chunk_id": "doc-10-chunk-4",
+        "score": 0.4513731002807617,
+        "matched_group_ids": [],
+        "text": "the rationale behind our\nsetup, we conduct an ablation study for novel view synthe-\nsis on the NVIDIA dataset [50], examining different MACP\nsettings, including the ablated models without MACP (‘w/o\nMACP (Nc = 4)’, ‘w/o MACP (Nc = Nf)’ in Table 3-(c))\nand with MACP having variations in ϵ values. For the varia-\ntions in ϵ values, we select 0.2, 1, 2, 3, and 5. Fig. 9 presents\nthe average PSNR values and the average number of con-\ntrol points for dynamic 3D Gaussians after training across\nall",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-0",
+        "score": 0.43365222215652466,
+        "matched_group_ids": [],
+        "text": "Figure 7. Visual comparisons for MACP ablation study.\nB´ezier curve [8]. For the MLP, grid-based model, and poly-\nnomial functions, we apply to them the structures similar to\nthose in prior works, including D3DGS [49], 4DGS [46],\nand STGS [21], respectively. Additionally, we implement\nthe B´ezier curve [8], a commonly used method for curve\nmodeling in computer graphics. Table 3-(a) presents quan-\ntitative comparisons of each 3D Gaussian trajectory model,\nfocusing on rendering quality (PSNR,",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q20",
+    "category": "table_quantitative",
+    "question": "In SplineGS Table 1 on the NVIDIA dataset, how much does SplineGS improve average PSNR and LPIPS over the pose-free MoSca result?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 6
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.01704759999847738,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-11",
+        "score": 0.6134889721870422,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "13, 18, 19, 21, 42, 46, 49] and\nCOLMAP-free [20, 27] methods on the NVIDIA dataset\n[50]. For this comparison, we follow the evaluation config-\nuration in [27]. The results demonstrate that our SplineGS\nsignificantly outperforms SOTA methods in both the PSNR\nand LPIPS [51] metrics. Notably, SplineGS achieves 890×\nand 8,000× faster rendering speed compared to RoDynRF\n[27] and DynNeRF [11], respectively. Ex4DGS [18] and\nSTGS [21], which are designed for multi-view settings, face\n6",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-4",
+        "score": 0.5729373693466187,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": ".29 / 0.086\n24.40 / 0.091\n23.27 / 0.091\n29.01 / 0.042\n23.23 / 0.058\n26.61 / 0.069\nN/A\nSplineGS (Ours)\n25.50 / 0.068\n33.72 / 0.031\n28.66 / 0.056\n25.61 / 0.071\n24.43 / 0.068\n28.37 / 0.032\n24.19 / 0.047\n27.21 / 0.053\n400\nTable 1. Novel view synthesis evaluation on the NVIDIA dataset. Red and Blue denote the best and second-best performances,\nrespectively. ‘N/A’ denotes that the rendering speed for MoSca [20] is unavailable, as the authors have not provided official code. For\nCasual-FVS [19], we",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 11,
+        "chunk_id": "doc-10-chunk-7",
+        "score": 0.5206955075263977,
+        "matched_group_ids": [],
+        "text": "the average PSNR value and the average number of\ncontrol points for dynamic 3D Gaussians after training, computed\nacross all scenes, respectively.\nC. Memory Footprint Comparison\nTo further highlight the efficiency of our SplineGS, we com-\npared its memory footprint with other 3DGS-based meth-\nods [18, 21, 46, 49], as shown in Table 4. This compar-\nison evaluates the average model storage requirements af-\nter optimization on the NVIDIA dataset [50]. The storage\nrequirements of 3DGS-based methods",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-3",
+        "score": 0.5205104351043701,
+        "matched_group_ids": [],
+        "text": ". To evaluate the capabil-\nity of SplineGS to model continuous trajectories of mov-\ning objects in a scene, we compare the novel view and\ntime synthesis results of SplineGS with those of NeRF-\nbased [11, 27] and 3DGS-based [21, 46, 49] methods. For\nthis evaluation, we follow the dataset sampling strategy\nin [22], which samples 24 timestamps from the NVIDIA\ndataset [50]. In addition, to simulate a larger motion, we\nexclude frames with odd time indices in the training sets.\nTo ensure all test",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-10",
+        "score": 0.49385613203048706,
+        "matched_group_ids": [],
+        "text": "mal\nNc, thanks to our MACP. While ‘Balloon2’ has more evenly\ndistributed Nc due to more complex and diverse motion.\nLoss Functions.\nTable 3-(b) shows the effectiveness of\neach loss for our overall SplineGS architecture. As noted,\nno consistent camera parameters can be learned without\nLpc, drastically impacting the rendering quality of the dy-\nnamic 3D Gaussians. Also, our Lgc, Ld-pc and LM can con-\nsiderably impact the overall rendering quality.\n8",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q21",
+    "category": "table_quantitative",
+    "question": "Using the FPS values in SplineGS Table 1, approximately how many times faster is SplineGS than RoDynRF and DynNeRF?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 6
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.015895500000624452,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-11",
+        "score": 0.4914756715297699,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "13, 18, 19, 21, 42, 46, 49] and\nCOLMAP-free [20, 27] methods on the NVIDIA dataset\n[50]. For this comparison, we follow the evaluation config-\nuration in [27]. The results demonstrate that our SplineGS\nsignificantly outperforms SOTA methods in both the PSNR\nand LPIPS [51] metrics. Notably, SplineGS achieves 890×\nand 8,000× faster rendering speed compared to RoDynRF\n[27] and DynNeRF [11], respectively. Ex4DGS [18] and\nSTGS [21], which are designed for multi-view settings, face\n6",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-4",
+        "score": 0.45258408784866333,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": ".29 / 0.086\n24.40 / 0.091\n23.27 / 0.091\n29.01 / 0.042\n23.23 / 0.058\n26.61 / 0.069\nN/A\nSplineGS (Ours)\n25.50 / 0.068\n33.72 / 0.031\n28.66 / 0.056\n25.61 / 0.071\n24.43 / 0.068\n28.37 / 0.032\n24.19 / 0.047\n27.21 / 0.053\n400\nTable 1. Novel view synthesis evaluation on the NVIDIA dataset. Red and Blue denote the best and second-best performances,\nrespectively. ‘N/A’ denotes that the rendering speed for MoSca [20] is unavailable, as the authors have not provided official code. For\nCasual-FVS [19], we",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-5",
+        "score": 0.45070749521255493,
+        "matched_group_ids": [],
+        "text": "d DynNeRF [11], generate inconsistent ar-\ntifacts and blurriness for unseen times. Furthermore, the\nMethod\nPSNR↑\nLPIPS↓\ntOF↓\nCOLMAP\nDynNeRF (ICCV’21) [11]\n23.36\n0.219\n0.921\n4DGS (CVPR’24) [46]\n17.07\n0.459\n6.314\nD3DGS (CVPR’24) [49]\n19.63\n0.343\n3.225\nSTGS (CVPR’24) [21]\n15.72\n0.474\n2.105\nCOLMAP-Free\nRoDynRF (CVPR’23) [27]\n21.58\n0.221\n2.138\nSplineGS (Ours)\n25.92\n0.098\n0.703\nTable 2.\nNovel view and time synthesis evaluation on the\nNVIDIA dataset.\nFigure 5. Visual comparisons for novel view and",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-3",
+        "score": 0.4287521243095398,
+        "matched_group_ids": [],
+        "text": ". To evaluate the capabil-\nity of SplineGS to model continuous trajectories of mov-\ning objects in a scene, we compare the novel view and\ntime synthesis results of SplineGS with those of NeRF-\nbased [11, 27] and 3DGS-based [21, 46, 49] methods. For\nthis evaluation, we follow the dataset sampling strategy\nin [22], which samples 24 timestamps from the NVIDIA\ndataset [50]. In addition, to simulate a larger motion, we\nexclude frames with odd time indices in the training sets.\nTo ensure all test",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-7",
+        "score": 0.4258928596973419,
+        "matched_group_ids": [],
+        "text": "y and precisely captures the\ncontinuous trajectories of moving objects over time, en-\nhancing the temporal consistency of rendered scenes that\ncan be checked in tOF scores [6] of Table 2.\nTo further analyze the SplineGS’s ability to model con-\ntinuous trajectories of dynamic 3D Gaussians, we visual-\nize the projected 2D motion tracking of dynamic objects in\npixel space, comparing it with D3DGS [49] and STGS [21],\nas shown in Fig. 6.\nWe observe that D3DGS [49] and\nSTGS [21] cannot provide",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q22",
+    "category": "table_quantitative",
+    "question": "For novel view-and-time synthesis on NVIDIA, how much better is SplineGS than the best baseline in PSNR, LPIPS, and tOF?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 7
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.0187073999986751,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.2,
+        "page_ndcg": 0.38685280723454163,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 5
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-11",
+        "score": 0.7107186913490295,
+        "matched_group_ids": [],
+        "text": "13, 18, 19, 21, 42, 46, 49] and\nCOLMAP-free [20, 27] methods on the NVIDIA dataset\n[50]. For this comparison, we follow the evaluation config-\nuration in [27]. The results demonstrate that our SplineGS\nsignificantly outperforms SOTA methods in both the PSNR\nand LPIPS [51] metrics. Notably, SplineGS achieves 890×\nand 8,000× faster rendering speed compared to RoDynRF\n[27] and DynNeRF [11], respectively. Ex4DGS [18] and\nSTGS [21], which are designed for multi-view settings, face\n6",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-4",
+        "score": 0.6799105405807495,
+        "matched_group_ids": [],
+        "text": ".29 / 0.086\n24.40 / 0.091\n23.27 / 0.091\n29.01 / 0.042\n23.23 / 0.058\n26.61 / 0.069\nN/A\nSplineGS (Ours)\n25.50 / 0.068\n33.72 / 0.031\n28.66 / 0.056\n25.61 / 0.071\n24.43 / 0.068\n28.37 / 0.032\n24.19 / 0.047\n27.21 / 0.053\n400\nTable 1. Novel view synthesis evaluation on the NVIDIA dataset. Red and Blue denote the best and second-best performances,\nrespectively. ‘N/A’ denotes that the rendering speed for MoSca [20] is unavailable, as the authors have not provided official code. For\nCasual-FVS [19], we",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 6,
+        "chunk_id": "doc-5-chunk-10",
+        "score": 0.6579494476318359,
+        "matched_group_ids": [],
+        "text": "ely used NVIDIA dataset [50] which features challeng-\ning monocular videos. Additionally, we assess novel view\nsynthesis performance on in-the-wild monocular videos\nfrom the DAVIS dataset [35] which contains an average of\n70 frames per video sequence.\n5.1. Comparison with State-of-the-Art Methods\nNovel View Synthesis.\nTable 1 presents a quantitative\ncomparison of NVS between our SplineGS and existing\nCOLMAP-based [11, 13, 18, 19, 21, 42, 46, 49] and\nCOLMAP-free [20, 27] methods on the NVIDIA",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 1,
+        "chunk_id": "doc-0-chunk-4",
+        "score": 0.6517471075057983,
+        "matched_group_ids": [],
+        "text": "rameter estimation and 3D Gaussian at-\ntributes, leveraging photometric and geometric consistency.\nThis eliminates the need for Structure-from-Motion prepro-\ncessing and enhances SplineGS’s robustness in real-world\nconditions. Experiments show that SplineGS significantly\noutperforms state-of-the-art methods in novel view syn-\nthesis quality for dynamic scenes from monocular videos,\nachieving thousands times faster rendering speed.\n1. Introduction\nNovel View Synthesis (NVS) is fundamental to 3D",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-5",
+        "score": 0.6469143629074097,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "d DynNeRF [11], generate inconsistent ar-\ntifacts and blurriness for unseen times. Furthermore, the\nMethod\nPSNR↑\nLPIPS↓\ntOF↓\nCOLMAP\nDynNeRF (ICCV’21) [11]\n23.36\n0.219\n0.921\n4DGS (CVPR’24) [46]\n17.07\n0.459\n6.314\nD3DGS (CVPR’24) [49]\n19.63\n0.343\n3.225\nSTGS (CVPR’24) [21]\n15.72\n0.474\n2.105\nCOLMAP-Free\nRoDynRF (CVPR’23) [27]\n21.58\n0.221\n2.138\nSplineGS (Ours)\n25.92\n0.098\n0.703\nTable 2.\nNovel view and time synthesis evaluation on the\nNVIDIA dataset.\nFigure 5. Visual comparisons for novel view and",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q23",
+    "category": "table_quantitative",
+    "question": "In the SplineGS trajectory-model ablation, how does MAS compare with the Bezier baseline in quality and deformation latency?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.011793100005888846,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-0",
+        "score": 0.5922039747238159,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "Figure 7. Visual comparisons for MACP ablation study.\nB´ezier curve [8]. For the MLP, grid-based model, and poly-\nnomial functions, we apply to them the structures similar to\nthose in prior works, including D3DGS [49], 4DGS [46],\nand STGS [21], respectively. Additionally, we implement\nthe B´ezier curve [8], a commonly used method for curve\nmodeling in computer graphics. Table 3-(a) presents quan-\ntitative comparisons of each 3D Gaussian trajectory model,\nfocusing on rendering quality (PSNR,",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-9",
+        "score": 0.5437252521514893,
+        "matched_group_ids": [],
+        "text": "motion tracking. We visualize\n2D pixel tracks to analyze motions of dynamic 3D Gaussians.\n5.2. Ablation Study\nMotion-Adaptive Spline (MAS). To demonstrate the effec-\ntiveness of MAS, we replace the MAS model with various\ndeformation models, including an MLP, a grid-based model,\npolynomial functions of third degree (denoted as ‘Poly\n(3rd)’) and tenth degree (denoted as ‘Poly (10th)’), and a\n7",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-4",
+        "score": 0.5242995023727417,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": ". To\nassess the effectiveness of our MACP technique for MAS,\nwe compare our full model with MACP against other ver-\nsions of our model with two fixed numbers of control points\nNc = 4 and Nc = Nf. As shown in Table 3-(c) and Fig.\n7, our SplineGS with MACP achieves a good trade-off be-\ntween rendering quality and gdef compared to the ablated\nmodels with fixed Nc. Using Nc = 4 for every dynamic\n3D Gaussian limits the motion modeling capacity of MAS,\nresulting in significantly lower metrics and",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q001.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-8",
+        "score": 0.4768911302089691,
+        "matched_group_ids": [],
+        "text": "57.8\nTable 4. Ablation Studies on iPhone dataset.\n2) “Per-Gaussian SE(3)”: replacing our motion represen-\ntation with naive per-Gaussian SE(3) motion trajectories,\nand 2) “Transl. Bases”: keeping the motion bases represen-\ntation but only using translational bases instead of SE(3).\nWe find that SE(3) bases significantly improve 3D tracking\nover both translational bases and per-Gaussian translational\nmotion. It also outperforms per-Gaussian SE(3) in overall\naccuracy and offers noticeably better",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-1",
+        "score": 0.4677102565765381,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "of each 3D Gaussian trajectory model,\nfocusing on rendering quality (PSNR, LPIPS) and deforma-\ntion latency per Gaussian, denoted as gdef. This latency re-\nflects the computational time required to estimate the defor-\nmation of a single dynamic 3D Gaussian. As shown in Ta-\nble 3-(a), our MAS model achieves superior rendering qual-\nity compared to all other deformation models. Consistent\nwith analyses in previous works [21, 46, 49], we observe\nthat the MLP and grid-based architectures require",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q24",
+    "category": "table_quantitative",
+    "question": "What benefit does MACP provide over using a fixed four control points for every dynamic Gaussian?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.012279800001124386,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.3333333333333333,
+        "page_ndcg": 0.5,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 3
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 0.3333333333333333,
+        "page_ndcg": 0.5,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 3
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-2",
+        "score": 0.6201464533805847,
+        "matched_group_ids": [],
+        "text": "PNf −1\nt=0\n∥π ˆ\nK( ˆRtS(t, P) + ˆTt) −π ˆ\nK( ˆRtS(t, P′) + ˆTt)∥2\n2.\n(8)\nBy following MACP, each dynamic 3D Gaussian is allowed\nto have a different number of control points. Therefore, the\nMACP can guide our MAS to have a minimal number of\ncontrol points when modeling simple motion, while having\nmore control points for more complex motions (see Fig. 8).\n4.3. Camera Parameter Estimation\nThe traditional SfM methods, such as COLMAP [38], fail\nto reliably estimate camera parameters in dynamic",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 5,
+        "chunk_id": "doc-4-chunk-0",
+        "score": 0.6112629175186157,
+        "matched_group_ids": [],
+        "text": "propose the MACP method for MAS, which can generate\nsparser control points while ensuring no dynamic model-\ning degradation. MACP is designed on top of 3D Gaussian\ndensification [17], but focuses on optimizing the number of\ncontrol points in MAS. Our MACP computes a new spline\nfunction S(t, P′) after every 3D Gaussian densification step,\nwhere P′ = {p′\nl|p′\nl ∈R3}l∈[0,Nc−2] is a set of Nc −1 con-\ntrol points, which contains one-fewer control points than the\ncurrent set P of control points. We",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-4",
+        "score": 0.5721205472946167,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": ". To\nassess the effectiveness of our MACP technique for MAS,\nwe compare our full model with MACP against other ver-\nsions of our model with two fixed numbers of control points\nNc = 4 and Nc = Nf. As shown in Table 3-(c) and Fig.\n7, our SplineGS with MACP achieves a good trade-off be-\ntween rendering quality and gdef compared to the ablated\nmodels with fixed Nc. Using Nc = 4 for every dynamic\n3D Gaussian limits the motion modeling capacity of MAS,\nresulting in significantly lower metrics and",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-7",
+        "score": 0.5337371826171875,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": ".066\nw/o LM\n26.34\n0.088\nOurs\n27.21\n0.053\n(c) Motion-Adaptive Control points Pruning\nPSNR↑\nLPIPS↓\ngdef (ns)↓\nw/o MACP (Nc = 4)\n26.62\n0.065\n5.34\nw/o MACP (Nc = Nf)\n27.08\n0.054\n6.11\nOurs\n27.21\n0.053\n5.63\nTable 3. Ablation studies. We ablate our framework and report\nthe average results on the NVIDIA dataset with the same setting\nas Novel View Synthesis experiment in Sec. 5.1.\nFigure 8. Analysis of MACP’s Efficacy. (a) Nc Heatmaps as\nthe averaged Nc values of dynamic 3D Gaussians and their",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 11,
+        "chunk_id": "doc-10-chunk-5",
+        "score": 0.5278340578079224,
+        "matched_group_ids": [],
+        "text": "mber of con-\ntrol points for dynamic 3D Gaussians after training across\nall scenes. As shown in Fig. 9, when ϵ is set to an exces-\nsively small value (‘ϵ = 0.2’), our MAS architecture fails\nto prune control points effectively, resulting in reduced effi-\nciency. Conversely, when ϵ is too large (‘ϵ = 5’), the prun-\ning becomes overly aggressive, resulting in an insufficient\nnumber of control points to accurately represent complex\nmotion trajectories. This trade-off underscores the impor-\ntance of",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q25",
+    "category": "table_quantitative",
+    "question": "Which SplineGS loss ablation is most catastrophic, and what are the numerical changes relative to the full model?",
+    "required_evidence_groups": [
+      {
+        "group_id": "reported_values",
+        "any_of": [
+          {
+            "filename": "q003.pdf",
+            "pdf_page": 8
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.01083910000306787,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "3": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      },
+      "5": {
+        "page_hit": 1.0,
+        "page_recall": 1.0,
+        "page_mrr": 1.0,
+        "page_ndcg": 1.0,
+        "complete_evidence": 1.0,
+        "covered_group_ids": [
+          "reported_values"
+        ],
+        "first_match_rank": 1
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q003.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-0",
+        "score": 0.5031548738479614,
+        "matched_group_ids": [
+          "reported_values"
+        ],
+        "text": "Figure 7. Visual comparisons for MACP ablation study.\nB´ezier curve [8]. For the MLP, grid-based model, and poly-\nnomial functions, we apply to them the structures similar to\nthose in prior works, including D3DGS [49], 4DGS [46],\nand STGS [21], respectively. Additionally, we implement\nthe B´ezier curve [8], a commonly used method for curve\nmodeling in computer graphics. Table 3-(a) presents quan-\ntitative comparisons of each 3D Gaussian trajectory model,\nfocusing on rendering quality (PSNR,",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q003.pdf",
+        "page": 11,
+        "chunk_id": "doc-10-chunk-3",
+        "score": 0.416032075881958,
+        "matched_group_ids": [],
+        "text": "on [2, 7] over time\ninto pixel space of all training cameras. This error is then\nused to update the new spline function. The 2D error mea-\nsurement is particularly effective because it directly aligns\nwith the image domain, where pixel-level accuracy is es-\nsential for precise spline function updates. To determine the\nupdated spline function, we set the threshold value ϵ of the\nerror E in Eq. 8 to 1. To validate the rationale behind our\nsetup, we conduct an ablation study for novel view",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-9",
+        "score": 0.40246152877807617,
+        "matched_group_ids": [],
+        "text": "motion tracking. We visualize\n2D pixel tracks to analyze motions of dynamic 3D Gaussians.\n5.2. Ablation Study\nMotion-Adaptive Spline (MAS). To demonstrate the effec-\ntiveness of MAS, we replace the MAS model with various\ndeformation models, including an MLP, a grid-based model,\npolynomial functions of third degree (denoted as ‘Poly\n(3rd)’) and tenth degree (denoted as ‘Poly (10th)’), and a\n7",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-3",
+        "score": 0.39589977264404297,
+        "matched_group_ids": [],
+        "text": "uction optimization.\n4.3. Ablation Study\nWe assess the effects of different components in our system\nin Tab. 5 and Fig. 7. We observe that both the geometric\noptimization and photometric optimization phases are crit-\nical.\nDQB contributes to smooth results, the multi-level\ntopology pyramid enhances global rigidity and shape, and\nnode control along with learnable skinning further improves\nthe expressiveness of our system. Additionally, our system\nbenefits from the global fusion of observations",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q003.pdf",
+        "page": 11,
+        "chunk_id": "doc-10-chunk-4",
+        "score": 0.3740997910499573,
+        "matched_group_ids": [],
+        "text": "the rationale behind our\nsetup, we conduct an ablation study for novel view synthe-\nsis on the NVIDIA dataset [50], examining different MACP\nsettings, including the ablated models without MACP (‘w/o\nMACP (Nc = 4)’, ‘w/o MACP (Nc = Nf)’ in Table 3-(c))\nand with MACP having variations in ϵ values. For the varia-\ntions in ϵ values, we select 0.2, 1, 2, 3, and 5. Fig. 9 presents\nthe average PSNR values and the average number of con-\ntrol points for dynamic 3D Gaussians after training across\nall",
+        "metadata": {}
+      }
+    ]
+  },
+  {
+    "id": "Q27",
+    "category": "abstention_and_false_premise",
+    "question": "MoSca relies on COLMAP to estimate camera poses before reconstruction. Which part of COLMAP does it use?",
+    "required_evidence_groups": [
+      {
+        "group_id": "correct_colmap_premise",
+        "any_of": [
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 1
+          },
+          {
+            "filename": "q002.pdf",
+            "pdf_page": 2
+          }
+        ]
+      }
+    ],
+    "query_latency_seconds": 0.01261499999964144,
+    "metrics_by_k": {
+      "1": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "3": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      },
+      "5": {
+        "page_hit": 0.0,
+        "page_recall": 0.0,
+        "page_mrr": 0.0,
+        "page_ndcg": 0.0,
+        "complete_evidence": 0.0,
+        "covered_group_ids": [],
+        "first_match_rank": null
+      }
+    },
+    "retrieved_chunks": [
+      {
+        "rank": 1,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-8",
+        "score": 0.6388953924179077,
+        "matched_group_ids": [],
+        "text": "stem, following MonST3R [115] on the SLAM dataset\nTUM-dynamics [88] and the synthetic Sintel dataset [12].\nThe camera pose errors are shown in Table 3. Although\ncamera pose estimation is not the main focus of MoSca, it\nstill achieves comparable or even superior performance com-\nFigure 6. Application of MoSca reconstructed 4D scenes.\n7",
+        "metadata": {}
+      },
+      {
+        "rank": 2,
+        "filename": "q001.pdf",
+        "page": 15,
+        "chunk_id": "doc-14-chunk-2",
+        "score": 0.6090209484100342,
+        "matched_group_ids": [],
+        "text": "If the video is captured by a roughly station-\nary camera (small interframe camera baseline), COLMAP\ntends to fail catastrophically. Initial results on DAVIS use\ncamera poses estimated with Unidepth [78] and Droid-\nSLAM [98]. Specifically, we first employ Unidepth to pre-\ndict metric depth and camera intrinsics. Using these predic-\ntions, we then estimate camera poses with DroidSLAM. (3)\nCamera parameters of in-the-wild videos in supplemental\nvideos are estimated with MegaSaM [62].\nAligning",
+        "metadata": {}
+      },
+      {
+        "rank": 3,
+        "filename": "q002.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-7",
+        "score": 0.599250078201294,
+        "matched_group_ids": [],
+        "text": "on of information in occluded areas – the advantages of\nMoSca are not fully showcased on NVIDIA videos.\n4.2. Camera and Correspondence\nCamera Pose.\nAnother advantage of MoSca is its nat-\nural integration of camera solving, both geometrically\nthrough tracklet-based bundle adjustment and photomet-\nrically through rendering-based refinement. We quantita-\ntively evaluate the camera pose estimation, a byproduct of\nour system, following MonST3R [115] on the SLAM dataset\nTUM-dynamics [88] and the",
+        "metadata": {}
+      },
+      {
+        "rank": 4,
+        "filename": "q003.pdf",
+        "page": 7,
+        "chunk_id": "doc-6-chunk-2",
+        "score": 0.5482173562049866,
+        "matched_group_ids": [],
+        "text": "her meth-\nods [21, 49], we observe that COLMAP [38] fails to recover\ncamera parameters and initial point clouds on the DAVIS\ndataset [35], as also claimed in [27]. On the other hand,\nour COLMAP-free SplineGS reconstructs accurate camera\nparameters that are the ones actually used to train [21, 49],\nwhich are shown in Fig. 4 for comparison. More results on\nDAVIS [35] are provided in the Suppl.\nNovel View and Time Synthesis. To evaluate the capabil-\nity of SplineGS to model continuous trajectories",
+        "metadata": {}
+      },
+      {
+        "rank": 5,
+        "filename": "q002.pdf",
+        "page": 8,
+        "chunk_id": "doc-7-chunk-1",
+        "score": 0.5331738591194153,
+        "matched_group_ids": [],
+        "text": "6\n3.528\nCasualSAM [116]\n0.141\n0.035\n0.615\n0.071\n0.010\n1.712\nDUSt3R [100] w/ mask\n0.417\n0.250\n5.796\n0.083\n0.017\n3.567\nMonST3R [115]\n0.108\n0.042\n0.732\n0.063\n0.009\n1.217\nOurs\n0.090\n0.034\n0.312\n0.031\n0.011\n0.426\nFigure 7. Visual comparison of ablation.\npared to camera-pose-tailored SLAM-based and DuST3R-\nbased methods. Notably, some of the SLAM systems in the\ntable require known camera intrinsics, whereas MoSca does\nnot.\nCorrespondence.\nOne feature of MoSca is its ability to\nperform global fusion",
+        "metadata": {}
+      }
+    ]
+  }
+]

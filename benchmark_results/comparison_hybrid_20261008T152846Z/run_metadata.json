@@ -1,0 +1,205 @@
+{
+  "benchmark_name": "RAG Agent Benchmark",
+  "benchmark_version": "1.1",
+  "benchmark_sha256": "81cc909390680003e958f640085e75835390ae87b50e1c1af9c572ce98261cae",
+  "run_started_at": "2026-10-08T15:29:48.240686+00:00",
+  "run_finished_at": "2026-10-08T15:30:12.004408+00:00",
+  "corpus_hash_algorithm": "sha256",
+  "corpus_sha256": "32a38dd2d10e3be5c24b3a319651611ce7b84526d56018793631f7dedf768c4c",
+  "corpus_files": [
+    {
+      "title": "Shape of Motion: 4D Reconstruction from a Single Video",
+      "short_name": "Shape of Motion",
+      "filename": "q001.pdf",
+      "expected_sha256": "5f0fb35636084d0020d57b50af58dd81b8fb62f19b4f99dd35a27a0f4c24c782",
+      "actual_sha256": "5f0fb35636084d0020d57b50af58dd81b8fb62f19b4f99dd35a27a0f4c24c782",
+      "hash_matches": true,
+      "path": "benchmarks\\q001.pdf"
+    },
+    {
+      "title": "MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds",
+      "short_name": "MoSca",
+      "filename": "q002.pdf",
+      "expected_sha256": "f6c50c2213f8e70159ed9d43c30781d356d203db8009b7c5f5d278cf98a19ed9",
+      "actual_sha256": "f6c50c2213f8e70159ed9d43c30781d356d203db8009b7c5f5d278cf98a19ed9",
+      "hash_matches": true,
+      "path": "benchmarks\\q002.pdf"
+    },
+    {
+      "title": "SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video",
+      "short_name": "SplineGS",
+      "filename": "q003.pdf",
+      "expected_sha256": "af4339e213c796227827b2b0dce398ad7205d77198a172216bda8a1e5726295f",
+      "actual_sha256": "af4339e213c796227827b2b0dce398ad7205d77198a172216bda8a1e5726295f",
+      "hash_matches": true,
+      "path": "benchmarks\\q003.pdf"
+    }
+  ],
+  "corpus_hashes_verified": true,
+  "allow_hash_mismatch": false,
+  "embedding_model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_model_revision": "unknown",
+  "chunk_size": 500,
+  "chunk_overlap": 75,
+  "k_values": [
+    1,
+    3,
+    5
+  ],
+  "retrieval_configuration": {
+    "mode": "hybrid",
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "bm25_tokenizer": "casefold + Unicode word tokens; no stemming",
+    "hybrid_candidate_k": 20,
+    "hybrid_rrf_k": 60,
+    "hybrid_fusion": "equal-weight reciprocal rank fusion",
+    "pipeline": "RetrievalPipeline",
+    "loader": "DocumentLoader",
+    "chunker": "TextChunker",
+    "embedding_service": "EmbeddingService",
+    "vector_store": "FaissVectorStore",
+    "similarity": "reciprocal rank fusion score (not cosine similarity)",
+    "query_strategy": "run max K once per question and score prefixes",
+    "score_unit": "filename_and_one_based_pdf_page",
+    "page_ndcg_definition": "A chunk gains one point for each previously uncovered required evidence group matched by its filename/page. Ideal DCG is the optimal page sequence over labeled evidence alternatives."
+  },
+  "indexed_documents": [
+    {
+      "filename": "q001.pdf",
+      "path": "benchmarks\\q001.pdf",
+      "chunk_count": 191,
+      "pages_indexed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "filename": "q002.pdf",
+      "path": "benchmarks\\q002.pdf",
+      "chunk_count": 150,
+      "pages_indexed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "filename": "q003.pdf",
+      "path": "benchmarks\\q003.pdf",
+      "chunk_count": 145,
+      "pages_indexed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "latency_seconds": {
+    "indexing_total": 21.171371700002055,
+    "retrieval_total": 0.3765339000019594,
+    "query_count": 23,
+    "query_mean": 0.016289856523065322,
+    "query_median": 0.01600740000139922,
+    "query_min": 0.012279399998078588,
+    "query_max": 0.02500520000467077
+  },
+  "resource_measurements": {
+    "before_index": {
+      "nvidia_smi": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "memory_used_mb": 0,
+          "memory_total_mb": 6141
+        }
+      ],
+      "torch_cuda": {
+        "available": false,
+        "reason": "torch cuda unavailable"
+      }
+    },
+    "after_index": {
+      "nvidia_smi": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "memory_used_mb": 0,
+          "memory_total_mb": 6141
+        }
+      ],
+      "torch_cuda": {
+        "available": false,
+        "reason": "torch cuda unavailable"
+      }
+    },
+    "after_retrieval": {
+      "nvidia_smi": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "memory_used_mb": 0,
+          "memory_total_mb": 6141
+        }
+      ],
+      "torch_cuda": {
+        "available": false,
+        "reason": "torch cuda unavailable"
+      }
+    }
+  },
+  "dependency_versions": {
+    "pydantic": "2.13.5",
+    "python-dotenv": "1.2.3",
+    "PyMuPDF": "1.28.2",
+    "sentence-transformers": "5.7.0",
+    "faiss-cpu": "1.15.1",
+    "rank-bm25": "0.2.2",
+    "numpy": "2.5.3",
+    "ollama": "not installed",
+    "torch": "2.14.0"
+  },
+  "python": {
+    "version": "3.12.11",
+    "executable": "C:\\coding\\researchRAG\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0"
+  }
+}
