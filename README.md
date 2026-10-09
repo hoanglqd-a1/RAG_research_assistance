@@ -108,7 +108,7 @@ when the process restarts.
 ### Available tools
 
 - `search_documents(query, top_k=5)` calls the configured retrieval backend and returns
-  text, filename, page, chunk ID, metadata, and cosine score.
+  text, filename, page, chunk ID, metadata, and backend-specific relevance score.
 - `get_document_metadata(filename=None)` lists indexed filenames, pages, chunk
   counts, and stored metadata.
 - `calculator(expression)` parses arithmetic with an AST whitelist. It permits
@@ -212,6 +212,148 @@ python -m scripts.evaluate_agent
 ```
 
 The agent evaluator indexes the same three PDFs, runs the summary, retrieval, table, abstention, and behavior cases, and writes `aggregate_scores.json`, `per_case_results.json`, `tool_traces.jsonl`, `answers.jsonl`, and `run_metadata.json` under `benchmark_results/agent_<timestamp>/`. It scores tool selection, source-page overlap, citation-page overlap, deterministic grounding/faithfulness proxies, behavior heuristics, latency, dependency versions, corpus hashes, and VRAM snapshots. Add `--judge-faithfulness` to use the configured local Ollama model for an extra faithfulness judgment over saved supporting chunks. Deferred web cases Q28-Q30 are skipped by default because there is no web-search tool; use `--include-deferred-web` only to test whether the current agent acknowledges that limitation.
+
+## Completed benchmarks
+
+The evaluations below cover retrieval and the generation-backed agent loop.
+There is not yet a separate scored evaluation of the fixed-path RAG generator.
+Results are individual runs, not averages across repeated generation trials.
+
+### Dataset and configuration
+
+The corpus contains only three SHA-256-verified PDFs:
+
+| File | Paper | Indexed chunks |
+| --- | --- | ---: |
+| `q001.pdf` | Shape of Motion | 191 |
+| `q002.pdf` | MoSca | 150 |
+| `q003.pdf` | SplineGS | 145 |
+
+All comparisons use `sentence-transformers/all-MiniLM-L6-v2`, 500-character
+chunks, and 75-character overlap. BM25 uses `k1=1.5`, `b=0.75`; hybrid uses
+equal-weight RRF with 20 candidates per backend and an RRF constant of 60.
+Within each comparison, corpus and benchmark hashes match. The retrieval
+comparison and agent comparison record different benchmark hashes, so their
+scores should be interpreted within their respective evaluations.
+
+### Retrieval-only RAG evaluation
+
+The completed dense/BM25/hybrid comparison runs 23 evidence-labeled questions
+at K=1,3,5, without generation or API credits. Metrics use filename and one-based
+PDF page labels. Recall measures coverage of required evidence groups, accepting
+their alternative labeled pages; complete evidence requires every group.
+MRR measures the first matching result, and nDCG accounts for ranked coverage of
+previously uncovered groups.
+
+| Retrieval mode | K | Hit | Recall | MRR | nDCG | Complete evidence |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Dense | 1 | 39.1% | 37.0% | 0.391 | 0.391 | 34.8% |
+| Dense | 3 | 56.5% | 51.1% | 0.471 | 0.464 | 47.8% |
+| Dense | 5 | 69.6% | 64.1% | 0.501 | 0.516 | 60.9% |
+| BM25 | 1 | 52.2% | 44.6% | 0.522 | 0.522 | 39.1% |
+| BM25 | 3 | 69.6% | 62.0% | 0.594 | 0.563 | 56.5% |
+| BM25 | 5 | 78.3% | 70.7% | 0.614 | 0.595 | 65.2% |
+| Hybrid | 1 | 56.5% | 51.1% | 0.565 | 0.565 | 47.8% |
+| Hybrid | 3 | 82.6% | 75.7% | 0.688 | 0.686 | 69.6% |
+| Hybrid | 5 | 82.6% | 75.7% | 0.688 | 0.683 | 69.6% |
+
+Mean retrieval latency was 14.0 ms for dense, 3.2 ms for BM25, and 16.3 ms for
+hybrid, excluding indexing and generation. Hybrid leads this page-level baseline;
+a matching page does not guarantee the returned chunk contains the actual evidence.
+
+Saved comparison runs:
+
+- [Dense](benchmark_results/comparison_dense_20261008T152846Z/aggregate_scores.json)
+- [BM25](benchmark_results/comparison_bm25_20261008T152846Z/aggregate_scores.json)
+- [Hybrid](benchmark_results/comparison_hybrid_20261008T152846Z/aggregate_scores.json)
+
+Each directory also contains `per_question_results.json`, `retrieved_chunks.jsonl`,
+and `run_metadata.json` for evidence inspection and reproducibility. Earlier dense
+and BM25 runs remain under `benchmark_results/`, including the initial retrieval
+baseline `retrieval_20261007T163355Z`.
+
+### Agent response and behavior evaluation
+
+The completed comparison uses local Ollama `qwen3:14b-q4_K_M`, the same system
+prompt, and a six-step limit. Each mode runs 31 cases: three summaries, seven
+narrative questions, 15 table/quantitative questions, one false-premise case,
+one abstention case, and four basic tool/behavior cases. Web cases Q28-Q30 are
+excluded. Evidence/citation metrics are scored on 27 cases and behavior checks
+on six cases; neither is an overall answer-accuracy metric.
+
+| Agent measure | Dense | Hybrid |
+| --- | ---: | ---: |
+| Completed cases | 31/31 | 31/31 |
+| Source-page hit | 59.3% | 70.4% |
+| Source-page recall | 54.6% | 63.9% |
+| Source-page MRR | 0.463 | 0.543 |
+| Complete source evidence | 51.9% | 59.3% |
+| Recognized citation present | 63.0% | 66.7% |
+| Complete citation evidence | 44.4% | 51.9% |
+| Expected tool plan satisfied | 45.2% | 45.2% |
+| No unexpected tools | 87.1% | 93.5% |
+| Behavior checks passed (heuristic) | 5/6 | 3/6 |
+| Grounding proxy score | 0.596 | 0.676 |
+| Mean case latency | 36.69 s | 36.67 s |
+
+Both runs took approximately 19 minutes and averaged two agent LLM calls per
+case. GPU snapshots after evaluation showed 9,977 MB used on an RTX 4060 Ti
+with 16,380 MB total. These snapshots are not continuous peak-VRAM measurements;
+PyTorch's memory counters do not include the separate Ollama process.
+
+Saved runs:
+
+- [Dense agent](benchmark_results/agent_dense_comparison/aggregate_scores.json)
+- [Hybrid agent](benchmark_results/agent_hybrid_comparison/aggregate_scores.json)
+
+Each directory contains `per_case_results.json`, `answers.jsonl`, `tool_traces.jsonl`,
+and `run_metadata.json`. The earlier full agent baseline is saved in
+`agent_20261008T110618Z`; behavior-only smoke tests are in
+`agent_20261007T183006Z`. The failed `agent_20261007T174954Z` run reflects an
+unavailable Ollama server and is not a model-quality baseline.
+
+Reviewing the paired responses exposes problems that aggregate page scores miss:
+
+- Q12: hybrid finds the labeled page but answers 5.3 percentage points; the
+  benchmark reference is 9.5 (34.4 minus 24.9).
+- Q18: hybrid finds the ablation page but omits the reported PCK-T decrease
+  from 0.824 to 0.737, instead giving a qualitative explanation.
+- Q01: both agents treat the paper title as a missing filename instead of
+  resolving it to `q001.pdf`.
+- Q27: both accept the false COLMAP premise; hybrid answers without retrieval.
+- B01: hybrid passes `filename=""` to metadata lookup and incorrectly reports
+  an empty corpus. This tool does not use retrieval fusion, so the failure
+  should not be attributed directly to hybrid search.
+- Q26: hybrid correctly says mobile inference speed is unspecified, but the
+  keyword-based abstention check marks it as a failure.
+- Neither run uses `calculator` in any of the 15 quantitative cases.
+
+The default faithfulness score is a deterministic grounding proxy, not a
+claim-by-claim correctness assessment. Citation support checks whether recognized
+citation pages occur in returned sources, not whether they support each claim;
+the parser also misses some citation formats such as page ranges. These saved
+runs did not enable `--judge-faithfulness`. Summary quality and quantitative
+answer correctness still need dedicated scoring beyond page overlap.
+
+Hybrid improves evidence coverage in these runs, but reliable answers still
+require better table extraction/interpretation, document resolution, calculation
+tool selection, and false-premise handling.
+
+### Reproducing the agent comparison
+
+With Ollama served inside `RAGagent`, run each mode sequentially from the project
+directory using the container's virtual environment. Use new output directories
+to preserve existing results:
+
+```bash
+cd /source/RAG_research_assistance
+RETRIEVAL_MODE=dense .venv/bin/python -m scripts.evaluate_agent --output-dir benchmark_results/agent_dense_new
+RETRIEVAL_MODE=hybrid .venv/bin/python -m scripts.evaluate_agent --output-dir benchmark_results/agent_hybrid_new
+```
+
+Keep the model, prompt, corpus, chunking, cases, and judge settings fixed when
+comparing retrieval modes. Inspect saved answers alongside metrics; a single
+generation run cannot establish that every behavior change is caused by retrieval.
 
 ## Tests
 
