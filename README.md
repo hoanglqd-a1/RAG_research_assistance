@@ -17,7 +17,9 @@ The same mode is used by pipeline queries, agent search, and benchmark runners.
 
 ## Setup and configuration
 
-Requires Python 3.10+ and Ollama for generation. Commands below assume Linux
+Recommended: Python 3.12 and Ollama for generation. Python 3.15 currently fails
+to install this project's `faiss-cpu` dependency on Windows (no compatible
+distribution). Commands below assume Linux
 and execution from the project root.
 
 ```bash
@@ -63,6 +65,44 @@ source .venv/bin/activate
 Serve Ollama inside the container when using `localhost:11434`.
 
 ## Usage
+
+### Local backend and frontend
+
+The FastAPI backend serves a buildless HTML/CSS/JavaScript frontend from the
+same origin. No Node.js installation is needed. After installing requirements
+and starting Ollama as described above, run from the project root:
+
+```bash
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Open http://127.0.0.1:8000 for the UI or http://127.0.0.1:8000/docs for the
+interactive API documentation. On Windows, create the environment with
+`py -3.12 -m venv .venv`, activate with `.venv\Scripts\Activate.ps1`, and copy settings
+with `Copy-Item .env.example .env` before running the commands above.
+
+Upload PDF or UTF-8 TXT files (up to 20 MB each), then choose **Hỏi AI agent**
+for answers with sources and observable tool traces, or **Tìm đoạn liên quan**
+for retrieval without calling Ollama. The segment count applies to retrieval
+mode; the agent chooses its own tool arguments. Follow-up questions share the
+current conversation; **Hội thoại mới** starts fresh while keeping the library.
+The interface reports backend configuration, not live Ollama readiness.
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /api/health` | Backend availability and model configuration |
+| `GET /api/documents` | Indexed filenames, chunks, and non-empty page counts |
+| `POST /api/documents` | Upload one multipart `file` |
+| `POST /api/search` | JSON `message` and optional `top_k` (1–20) |
+| `POST /api/chat` | JSON `message` and optional `conversation_id` |
+
+The embedding model loads on the first operation that needs services, so first
+upload can take longer. Files are processed in temporary directories and removed
+after indexing. Duplicate filenames are rejected to keep citations unambiguous.
+Use **one server worker**: the library and conversations live in process memory
+and reset on restart. Operations are serialized to protect the shared index and
+conversation state. This local prototype shares its library across browser tabs
+and has no authentication; keep the default loopback binding for local use.
 
 ```bash
 python -m scripts.ask_agent data/paper.pdf "What evidence supports the main result?"

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paper Assistant</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<aside>
+  <a class="brand" href="/">◈ Paper Assistant</a>
+  <p class="muted">Không gian đọc & khám phá nghiên cứu</p>
+  <div class="library-heading"><h2>Thư viện paper</h2><span id="count">0</span></div>
+  <form id="upload-form"><label class="upload" for="files">＋ Thêm tài liệu PDF / TXT</label><input id="files" type="file" accept=".pdf,.txt,.text" multiple><p class="muted small">Tối đa 20 MB / file · TXT UTF-8</p><button type="submit">Tải lên & lập chỉ mục</button></form>
+  <ul id="documents" class="documents"></ul>
+  <div class="aside-bottom"><p id="system-status">Đang kết nối backend…</p><p class="muted small">Dữ liệu và hội thoại lưu trong bộ nhớ, mất khi khởi động lại server.</p></div>
+</aside>
+<main>
+  <header><div><span class="eyebrow">RESEARCH WORKSPACE</span><h1>Hỏi paper, tìm bằng chứng.</h1></div><button id="new-chat" class="secondary">Hội thoại mới</button></header>
+  <section id="messages" aria-live="polite" aria-label="Hội thoại">
+    <div class="welcome"><span class="emblem">◈</span><h2>Bắt đầu từ một câu hỏi hay.</h2><p>Tải paper vào thư viện, rồi khám phá phương pháp,<br>kết quả và bằng chứng cùng AI agent.</p><div class="suggestions"><button data-prompt="Tóm tắt những đóng góp chính của các paper.">Tóm tắt đóng góp</button><button data-prompt="So sánh phương pháp và hạn chế của các paper.">So sánh phương pháp</button></div></div>
+  </section>
+  <div class="composer-wrap"><p id="notice" role="status"></p><form id="question-form"><div class="options"><label for="mode">Chế độ</label><select id="mode"><option value="chat">Hỏi AI agent</option><option value="search">Tìm đoạn liên quan</option></select><label for="top-k">Số đoạn</label><input id="top-k" type="number" min="1" max="20" value="5"></div><label class="sr-only" for="question">Câu hỏi về paper</label><textarea id="question" rows="3" maxlength="8000" placeholder="Paper đề xuất phương pháp gì? Bằng chứng nằm ở đâu?" required></textarea><div class="composer-bottom"><span class="muted small">Luôn kiểm tra câu trả lời với nguồn gốc.</span><button id="send" type="submit">Gửi câu hỏi ↗</button></div></form></div>
+</main>
+</body></html>
